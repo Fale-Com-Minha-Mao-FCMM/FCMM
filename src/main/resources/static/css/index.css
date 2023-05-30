@@ -1696,3 +1696,17 @@ input[type="range"] {
 #total{margin-left: 10px;}
 
 /*=== FIM QUIZ ===*/
+
+/*=== ESTATISTICAS ===*/
+canvas {
+  border: 1px solid #003087;
+  background: white;
+  box-shadow: 3px 3px 3px rgba (0,0,0,0.1);
+}
+
+.estatistica-container{
+  position: relative;
+  margin: auto;
+  height: 400px;
+  width: 800px;
+}
