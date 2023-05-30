@@ -1000,7 +1000,6 @@ cursor: pointer;
 button {
   cursor: pointer;
 }
-
 .crudContainer {
   width: 90%;
   height: 80%;
@@ -1012,7 +1011,6 @@ button {
   left: 5%;
   margin-top: -50px;
 }
-
 .crudContainer .headerCrud {
   min-height: 70px;
   display: flex;
@@ -1022,15 +1020,13 @@ button {
   top: 50%;
 
 }
-
 .crudContainer .headerCrud span {
   font-weight: 900;
   font-size: 20px;
 }
-
 #new {
-  font-size: 20px;
-  padding: 13px;
+  font-size: 1.1rem;
+  padding: 2%;
   border-radius: 5px;
   border: none;
   color: white;
@@ -1039,60 +1035,49 @@ button {
   /* margin-left: 65rem; */
   /*margin-top: 10rem;*/
 }
-
 .divTable {
   padding: 10px;
   width: auto; 
   height:inherit; 
   overflow:auto;
 }
-
 .divTable::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke; 
 }
-
 .divTable::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: darkgray; 
 }
-
 table {
   width: 100%;
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
 }
-
 thead {
   background-color: whitesmoke;
 }
-
 tr {
   border-bottom: 1px solid rgb(238, 235, 235)!important;
 }
-
 tbody tr td {
   vertical-align: text-top;
   padding: 6px;
   max-width: 50px;
 }
-
 thead tr th {
   padding: 5px;
   text-align: start;
   margin-bottom: 50px;
 }
-
 tbody tr {
   margin-bottom: 50px;
 }
-
 thead tr th.acao {
   width: 100px!important;
   text-align: center;
 }
-
 tbody tr td.acao {
   text-align: center;
 }
@@ -1102,7 +1087,6 @@ tbody tr td.acao {
 button {
   cursor: pointer;
 }
-
 .crudContainer2 {
   width: 90%;
   height: 80%;
@@ -1114,7 +1098,6 @@ button {
   left: 5%;
   margin-top: -50px;
 }
-
 .crudContainer2 .headerCrud2 {
   min-height: 70px;
   display: flex;
@@ -1124,208 +1107,101 @@ button {
   top: 50%;
 
 }
-
 .crudContainer2 .headerCrud2 span {
   font-weight: 900;
   font-size: 20px;
   word-break: break-all;
 }
-
 #new2 {
-  font-size: 16px;
-  padding: 8px;
+  font-size: 1.1rem;
+  padding: 2%;
   border-radius: 5px;
   border: none;
   color: white;
   background-color: #003087;
   text-decoration: none;
 }
-
 .divTable2{
   padding: 10px;
   width: auto; 
   height:inherit; 
   overflow:auto;
 }
-
 .divTable2::-webkit-scrollbar {
   width: 12px;
   background-color: whitesmoke; 
 }
-
 .divTable2::-webkit-scrollbar-thumb {
   border-radius: 10px;
   background-color: darkgray; 
 }
-
 table {
   width: 100%;
   border-spacing: 10px;
   word-break: break-all;
   border-collapse: collapse;
 }
-
 thead {
   background-color: whitesmoke;
 }
-
 tr {
   border-bottom: 1px solid rgb(238, 235, 235)!important;
 }
-
 tbody tr td {
   vertical-align: text-top;
   padding: 6px;
   max-width: 50px;
 }
-
 thead tr th {
   padding: 5px;
   text-align: start;
   margin-bottom: 50px;
 }
-
 tbody tr {
   margin-bottom: 50px;
 }
-
 thead tr th.acao2 {
   width: 100px!important;
   text-align: center;
 }
-
 tbody tr td.acao2 {
   text-align: center;
 }
-
 /* Responsividade - Media Query*/
 @media (max-width: 700px) {
   body {
     font-size: 10px;
   }
-  
   .headerCrud2 span {
     font-size: 15px;
   }
-
-  #new2 {
-    padding: 5px;
-    font-size: 10px;
-  }
-
   thead tr th.acao2 {
     width: auto!important;
   }
-  
   td button i {
     font-size: 20px!important;
   }
-
   td button i:first-child {
     margin-right: 0;
   }
-
-  .modal2 {
-    width: 90%!important;
-  }
-
-  .modal2 label {
-    font-size: 12px!important;
-  }
 }
-
-.modal-container2 {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  z-index: 999;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
-  background-color: white;
-  border-radius: 10px;
-  width: 50%;
-}
-
-.modal2 label {
-  font-size: 14px;
-  width: 100%;
-}
-
-.modal2 input {
-  width: 100%;
-  outline: none;
-  padding: 5px 10px; 
-  width: 100%;
-  margin-bottom: 20px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-}
-
-.modal2 button {
-  width: 100%;
-  margin: 10px auto;
-  outline: none;
-  border-radius: 20px; 
-  padding: 5px 10px; 
-  width: 100%;
-  border: none;
-  background-color: rgb(57, 57, 226);
-  color: white;
-}
-
-.active {
-  display: flex;
-}
-
-.active .modal2 {
-  animation: modal .4s;
-}
-
-@keyframes modal2 {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -60px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
 td button {
   border: none;
   outline: none;
   background: transparent;
 }
-
 td button i {
   font-size: 25px;
 }
-
 td button i:first-child {
   margin-right: 10px;
 }
-
-/*=== FIM CRUD ALUNO ===*/
+/*=== FIM CRUD ADMIN ===*/
 
 /*=== SIDEBAR CRUD ===*/
-
 #logoNav{
   width: 200px;
 }
-
 .sidebar{
   position: fixed;
   height: 100%;
@@ -1437,14 +1313,12 @@ nav .sidebar-button i{
 /*=== FIM SIDEBAR CRUD ===*/
 
 /*=== INÍCIO CAPÍTULOS - essa configuração vale tanto pro crud, quanto pra página em que o usuário visualiza os capitulos===*/
-
 #capitulos{
   display: flex;
   justify-content: space-evenly;
   padding-top: 3rem;
   margin-bottom: 7rem;
 }
-
 .capitulos-details{
   border-radius: 20px;
   background-color: var(--branco);
@@ -1463,12 +1337,10 @@ nav .sidebar-button i{
 .capitulos-title p{
   margin: 0.8rem 0;
 }
-
 .capitulos-title p:nth-child(1){
   font-size: 1.1rem;
   min-height: 3rem;
 }
-
 .capitulos-title p:nth-child(2){
   padding-bottom: 0.8rem;
 }
@@ -1479,7 +1351,6 @@ nav .sidebar-button i{
   color: #fff;
   border-radius: 10px;
 }
-
 .btn_adicionar_capitulo{
   font-size: 16px;
   padding: 8px;
@@ -1487,7 +1358,6 @@ nav .sidebar-button i{
   border: none;
   text-decoration: none;
 }
-
 .btn_adicionar_capitulo a{
   color: #fff;
   text-decoration: none;
@@ -1500,7 +1370,6 @@ nav .sidebar-button i{
   border-radius: 10px;
   padding: 0.4rem 6rem;
 }
-
 @media (max-width: 870px) {
   .capitulos-details {
     width: 14rem;
@@ -1516,12 +1385,10 @@ nav .sidebar-button i{
   .capitulos-details {
     width: 12rem;
   }
-
   #capitulos{
     gap: 24px;
   }
 }
-
 @media (max-width: 499px) {
   #capitulos{
     flex-direction: column;
@@ -1530,12 +1397,10 @@ nav .sidebar-button i{
 /*=== FIM CAPÍTULOS ===*/
 
 /*=== INÍCIO NAVBAR USUÁRIO ===*/
-
 .nav-list-user {
   list-style: none;
   display: flex;
 }
-
 .nav-list-user a{
   list-style: none;
   text-decoration: none;
@@ -1544,13 +1409,11 @@ nav .sidebar-button i{
 .nav-list-user li ul a{
   list-style: none;
 }
-
 .nav-list-user li {
   letter-spacing: 3px;
   margin-left: 32px;
   list-style: none;
 }
-
 .nav-list-user:hover>ul.nav-list2-user {
   display: block;
   top: 45px;
@@ -1559,13 +1422,11 @@ nav .sidebar-button i{
   width: 200px;
   list-style: none;
 }
-
 .nav-list-user ul.nav-list2-user a {
   width: 100px;
   padding: 0 20px;
   list-style: none;
 }
-
 /*=== FIM NAVBAR USUARIO ===*/
 
 /*=== ÍNICIO FORM EDITAR INFORMAÇÕES ===*/
@@ -1584,7 +1445,6 @@ nav .sidebar-button i{
   margin-top: -11%;
   flex-direction: column;
 }
-
 .Cadastro-Container .inputConfirmaNovaSenha{
   display: flex;
   position: relative;
@@ -1595,7 +1455,6 @@ nav .sidebar-button i{
 .Cadastro-Container .textConfirmaNovaSenha{
   margin-left: 24px;
 }
-
 .Cadastro-Container .emails{
   display: flex;
   position: relative;
@@ -1611,7 +1470,6 @@ nav .sidebar-button i{
   width: 100%;
   flex-direction: column;
 }
-
 .Cadastro-Container .inputSubmitSalvar{
   display: flex;
   padding: 10px 82px;
@@ -1631,18 +1489,15 @@ nav .sidebar-button i{
   text-decoration: none;
   cursor: pointer;
   }
-
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
 
 /*=== INÍCIO CAPITULO 1 ===*/
-
 .titulo {
   text-align: center;
   color: #003087;
   font-size: 40px;
   padding-top: 3rem;
 }
-
 #alfabeto,#pronomes,#cumprimentos,#numerais{
   display: flex;
   align-items: center;
@@ -1653,29 +1508,24 @@ nav .sidebar-button i{
   padding: 3rem;
   gap: 5rem;
 }
-
 .imagem {
   width: 25%;
 }
-
 iframe {
   width: 500px;
   margin: 0 auto;
   display: block; 
 }
-
 @media (max-width: 540px) {
   .videos {
     width: 300px;
     height: 200px;
   }
-
   .imagem {
     width: 300px;
     height: 300px;
   }
 }
-
 #btnQuiz {
   font-size: 20px;
   padding: 13px;
@@ -1692,33 +1542,27 @@ iframe {
 /*=== INÍCIO QUIZ ===*/
 section {
   width: 100vw;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 main {
   height: 100vh;
   width: 100%;
 }
-
 h1 {
   text-align: center;
   font-size: 1.75rem;
   margin: 2.5rem 0 0 0;
   color: #003087;
 }
-
 /* div class questao com numero da questao e pergunta */
 .questao {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
-
-
 #numQuestao {
   text-align: center;
   width: 2rem;
@@ -1729,12 +1573,10 @@ h1 {
   padding: 6px 10px 4px 8px;
   border-radius: 50%;
 }
-
 #pergunta {
   margin-left: 1rem;
   padding: 1rem;
 }
-
 .imagemDoQuiz {
   display: flex;
   justify-content: center;
@@ -1830,12 +1672,12 @@ h1 {
 
 .acertou {
   background: var(--verde);
-  animation: aparecer 0.5s infinite alternate;
+  animation: aparecer 0.9s infinite alternate;
 }
 
 .errou {
   background: var(--vermelho);
-  animation: aparecer 0.5s infinite alternate;
+  animation: aparecer 0.9s infinite alternate;
 }
 
 .placar {

@@ -258,7 +258,7 @@ function fimDoJogo() {
 
     let s = 's'
     pontos == 0 ? s = '' : s = s
-    instrucoes.textContent = "Fim de Jogo! Você conseguiu." + pontos + " ponto"+ s
+    instrucoes.textContent = "Fim de Jogo! Você conseguiu " + pontos + " ponto"+ s
 
     instrucoes.classList.add('placar')
 
@@ -270,8 +270,9 @@ function fimDoJogo() {
         //location.reload();
         instrucoes.classList.remove('placar')
         // REINICIAR O JOGO
+        /*
         articleQuestoes.style.display = 'block'
         proximaQuestao(1)
-        instrucoes.textContent = 'Leia a questão e clique na resposta correta'
+        instrucoes.textContent = 'Leia a questão e clique na resposta correta'*/
     }, 8000)
 }
