@@ -9,6 +9,12 @@
             <script type="module" th:src="@{/js/justValidate/just-validate.production.min.js}"></script>
             <script type="text/javascript" th:src="@{/js/validar.js}"></script>
             <title>Cadastro</title>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                  $('#inputNumeroCelular').mask('(00) 0000-0000');
+                  }); 
+            </script>
         </head>
         <body>
             <header th:insert="~{fragments/header}"></header>
@@ -88,7 +94,7 @@
                                 class="inputName" 
                                 name="inputName"
                                  placeholder="Edson" 
-                                 th:field="*{nome}" minlength="3" required>
+                                 th:field="*{nome}" minlength="3" required >
                                  <br>
                             </div>
                             <div>
@@ -106,12 +112,12 @@
                             <div>
                                 <label for="formNumeroCelular" class="textNumeroCelular">Número de celular*</label><br>
                                 <input 
-                                type="tel" 
+                                type="text" 
                                 class="inputNumeroCelular" 
                                 id="inputNumeroCelular" 
                                 name="inputNumeroCelular" 
                                 placeholder="+55 (11) 99999-9999" 
-                                th:field="*{telefone}" minlength="9" maxlength="16" required>
+                                th:field="*{telefone}"maxlength="13" required>
                                 <br>
                             </div>
                         </div>                 
@@ -142,7 +148,7 @@
             </div>
             </div>
         </body>
-       
+
         <footer th:insert="~{fragments/footer}">
             
         </footer>
