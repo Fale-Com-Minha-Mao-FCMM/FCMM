@@ -179,6 +179,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
+  position: fixed; /* Adicionado */
+  left: 20px
 }
 #logo a:hover {
   color: #fff;
@@ -206,6 +208,7 @@ body {
   margin-top: 0px;
   width: 100vw;
   z-index: 1;
+  padding-left: 250px
 }
 .menu-icon {
   display: none;
@@ -216,7 +219,6 @@ body {
 .nav-list {
   list-style: none;
   display: flex;
-  flex:1;
 }
 .nav-list li {
   list-style: none;
@@ -253,15 +255,25 @@ body {
   letter-spacing: 3px;
   margin-left: 32px;
 }
+#menu-toggle{
+  display: none;
+}
+
 /* Novo CSS para o navbar responsivo */
 @media only screen and (max-width: 603px) {
   #nav-header {
     flex-direction: column;
     align-items: flex-start;
+    height: 1rem;
   }
 
+  #logo img { 
+    width: 210px;
+    margin-top: -70px;
+  }
   .menu-icon {
     display: inline-block;
+
   }
 
   .nav-list {
@@ -277,11 +289,39 @@ body {
   input[type="checkbox"]:checked ~ .nav-list {
     display: block;
   }
-  
-}
-#menu-toggle:checked ~ #navbar .nav-list {
+  #menu-toggle:checked ~ #navbar .nav-list {
     display: block;
   }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 20px;
+    color:white;
+    background-color: #003087;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+    padding-top: 30px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ #nav-header .nav-list {
+    display: block;
+    width: 100%;
+    margin-top: 122px;
+    border-radius: 0 0 0 10px;
+    background-color: #22488e;
+  }
+}
 /*=== FIM MENU ====*/
 
 /*=== INÍCIO HOME ====*/
@@ -531,6 +571,18 @@ textarea{
   padding-bottom: 30px;
   font-size: 20px;
   color:#003087 
+}
+
+/* Carrossel */
+.owl-carousel {
+  display: flex;
+  justify-content: space-between; /* ou outra opção de alinhamento desejada */
+}
+.owl-carousel .capitulos-details {
+  flex: 0 0 auto; /* ou outra opção de dimensionamento desejada */
+  margin-right: 10px; /* ou outra margem desejada entre os itens */
+  max-width: 80%;
+  /* Restante das propriedades específicas para cada item do carrossel */
 }
 
 /*cards desenvolvedores*/
@@ -1827,30 +1879,3 @@ input[type="range"] {
   margin-left: 10px;
 }
 /*=== FIM QUIZ ===*/
-
-/*=== ESTATISTICAS ===*/
-canvas {
-  border: 1px solid #003087;
-  background: white;
-  box-shadow: 3px 3px 3px rgba (0,0,0,0.1);
-}
-.estatistica-container{
-  position: relative;
-  margin: auto;
-  height: 400px;
-  width: 800px;
-}
-
-/* Carrossel */
-
-.owl-carousel {
-  display: flex;
-  justify-content: space-between; /* ou outra opção de alinhamento desejada */
-}
-
-.owl-carousel .capitulos-details {
-  flex: 0 0 auto; /* ou outra opção de dimensionamento desejada */
-  margin-right: 10px; /* ou outra margem desejada entre os itens */
-  max-width: 80%;
-  /* Restante das propriedades específicas para cada item do carrossel */
-}
