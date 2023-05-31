@@ -262,6 +262,7 @@ function fimDoJogo() {
 
     instrucoes.classList.add('placar')
 
+
     // OCULTAR O ARTICLE DA QUESTAO
     articleQuestoes.style.display = 'none'
 

@@ -165,7 +165,6 @@ body {
     display: none;
   }
 }
-
 /*=== FIM DA BARRA DE ACESSIBILIDADE ====*/
 
 /*=== INÍCIO MENU ====*/
@@ -847,7 +846,6 @@ cursor: pointer;
     margin-bottom: 20px;
   }
 }
-
 /*=== FIM CADASTRO ====*/
 
 /*=== INÍCIO LOGIN ====*/
@@ -920,7 +918,6 @@ cursor: pointer;
 .Login-Container .btnCadastro{
   color:black
 }
-
 /*=== FIM LOGIN ====*/
 
 /*=== INÍCIO FOOTER LOGIN ===*/
@@ -981,7 +978,6 @@ cursor: pointer;
     bottom: -20em;
   }
 }
-
 /*=== FIM FOOTER LOGIN ===*/
 
 /*=== ÁREA DO ADMINISTRADOR ===*/
@@ -1489,6 +1485,47 @@ nav .sidebar-button i{
   text-decoration: none;
   cursor: pointer;
   }
+.details-info{
+  width: 100%;
+}
+  @media(max-width: 700px){
+    .Cadastro-Container .inputEmail2{
+      width: 260%;
+      margin-left: 0px;
+    }
+    .email2{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      margin-left: 9%;
+    }
+    .Cadastro-Container .senhas {
+      gap:15px;
+      flex-direction: column;
+      margin-left: 9%;
+    }
+    .Cadastro-Container .inputSenha {
+      margin-bottom: 0px;
+      margin-right: 0px;
+      width: 260%;
+    }
+    .Cadastro-Container .inputNovaSenha {
+      width: 260%;
+    }
+    .Cadastro-Container .inputConfirmaNovaSenha {
+      margin-left: 0px;
+      width: 260%;
+    }
+    .Cadastro-Container .textConfirmaNovaSenha {
+      margin-left: 0px;
+    }
+    .details-info{
+      margin-left: 2%;
+    }
+    .details-info h2{
+      margin-left: 50px;
+    }
+  }
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
 
 /*=== INÍCIO CAPITULO 1 ===*/
@@ -1696,4 +1733,18 @@ input[type="range"] {
 #total{margin-left: 10px;}
 
 /*=== FIM QUIZ ===*/
+
+/*=== ESTATISTICAS ===*/
+canvas {
+  border: 1px solid #003087;
+  background: white;
+  box-shadow: 3px 3px 3px rgba (0,0,0,0.1);
+}
+
+.estatistica-container{
+  position: relative;
+  margin: auto;
+  height: 400px;
+  width: 800px;
+}
 
