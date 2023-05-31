@@ -849,7 +849,6 @@ cursor: pointer;
 /*=== FIM CADASTRO ====*/
 
 /*=== INÍCIO LOGIN ====*/
-
 .Login-Container{
   top: 100px;
   margin-bottom: 20vh;
@@ -864,9 +863,7 @@ cursor: pointer;
   border-radius: 32px;
   flex-direction: column;
   justify-content: center;
-  background-color: var;
 }
-
 .Login-Container h1{
   color: var(--dl-color-default-black);
   height: auto;
@@ -876,7 +873,6 @@ cursor: pointer;
   margin-right: 0;
   margin-bottom: 48px;
 }
-
 .Login-Container .inputEmail{
   top:2px;
   display: flex;
@@ -885,7 +881,6 @@ cursor: pointer;
   flex-direction: column;
   width: 100%;
 }
-
 .Login-Container .inputSenha{
   top:2px;
   display: flex;
@@ -894,7 +889,6 @@ cursor: pointer;
   flex-direction: column;
   width: 100%;
 }
-
 .Login-Container .inputSubmitEntrar{
   display: flex;
   padding: 10px 82px;
@@ -914,14 +908,36 @@ cursor: pointer;
   cursor: pointer;
   text-decoration: none;
   }
-
 .Login-Container .btnCadastro{
-  color:black
+  color:black;
+}
+@media (max-width: 426px) {
+  .Login-Container{
+    width: 374px;
+    margin-top: 1vh;
+  }
+}
+@media (max-width: 376px) {
+  .Login-Container{
+    width: 330px;
+  }
+  Login-Container h1{
+    font-size:22px
+  }
+}
+@media (max-width: 326px) {
+  .Login-Container{
+    width: 290px;
+    margin-top: 9vh;
+    padding: 15px;
+  }
+  .Login-Container h1{
+    font-size:22px
+  }
 }
 /*=== FIM LOGIN ====*/
 
 /*=== INÍCIO FOOTER LOGIN ===*/
-
 #footerLogin {
   position:absolute;
   width: 100%;
@@ -967,6 +983,11 @@ cursor: pointer;
 }
 .socialsLogin a:hover i {
   color: aqua;
+}
+@media (max-width: 768px) {
+  #footerLogin{
+    bottom: -19rem;
+  }
 }
 @media (max-width: 321px) {
   #footerLogin{
