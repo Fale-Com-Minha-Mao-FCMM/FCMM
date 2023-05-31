@@ -261,10 +261,26 @@ function fimDoJogo() {
     instrucoes.textContent = "Fim de Jogo! Você conseguiu " + pontos + " ponto"+ s
 
     instrucoes.classList.add('placar')
-
+    document.querySelector('.fim').style.display = "block";
+    document.getElementById("fimBotao").innerHTML = "Continuar";
 
     // OCULTAR O ARTICLE DA QUESTAO
     articleQuestoes.style.display = 'none'
+
+} else {
+    let s = 's'
+    pontos == 0 ? s = '' : s = s
+    instrucoes.textContent = "Que pena! Você conseguiu apenas " + pontos + " ponto"+ s + ", tente novamente."
+    instrucoes.classList.add('placar')
+    document.querySelector('.fim').style.display = "block";
+    document.getElementById("fimBotao").innerHTML = "Repetir";
+    
+// OCULTAR O ARTICLE DA QUESTAO
+    articleQuestoes.style.display = 'none'
+      }
+
+    somAplausos.play()
+}
 
     setTimeout(function() {
         pontos = 0 // zerar placar
@@ -276,4 +292,3 @@ function fimDoJogo() {
         proximaQuestao(1)
         instrucoes.textContent = 'Leia a questão e clique na resposta correta'*/
     }, 8000)
-}

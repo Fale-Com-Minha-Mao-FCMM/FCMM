@@ -1603,6 +1603,7 @@ nav .sidebar-button i{
   background-color: white;
   padding: 3rem;
   gap: 5rem;
+  max-width: 1000px;
 }
 .imagem {
   width: 25%;
@@ -1611,6 +1612,23 @@ iframe {
   width: 500px;
   margin: 0 auto;
   display: block; 
+}
+.divQuiz{
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 671px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+  #alfabeto,#pronomes,#cumprimentos,#numerais{
+    flex-direction: column;
+  }
 }
 @media (max-width: 540px) {
   .videos {
@@ -1630,8 +1648,6 @@ iframe {
   color: white;
   background-color: #003087;
   text-decoration: none;
-  margin-left: 65rem;
-  margin-top: 10rem;
 }
 /*=== FIM CAPITULO 1 ===*/
 
@@ -1678,7 +1694,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
 /* article que acomoda a questao completa */
 .questoes {
   user-select: none;
@@ -1690,7 +1705,6 @@ h1 {
   border-radius: 32px;
   margin-bottom: 0.625rem;
 }
-
 .questoes ol li {
   border: 1px solid var(--principal);
   display: block;
@@ -1698,39 +1712,31 @@ h1 {
   padding: 0.6rem;
   border-radius: 8px;
 }
-
 .questoes ol li:hover {
   background: var(--principal);
   cursor: pointer;
 }
-
 .bloqueado {
   display: none;
 }
-
 .bloqueado li:hover {
   display: none;
 }
-
 #instrucoes {
   font-size: 1rem;
   color: #191919;
   padding: 0.625rem;
   border-radius: 8px;
-
   display: flex;
   justify-content: center;
 }
-
 #aviso {
   color: var(--principal);
 }
-
 #autoria {
   margin-top: 0.625rem;
   font-size: 0.75rem;
 }
-
 /* ANIMACAO */
 
 /* Animar o input */
@@ -1745,15 +1751,12 @@ h1 {
   100% {
   }
 }
-
 .animar {
   animation: piscar .75s infinite alternate;
 }
-
 .aparecer {
   animation: aparecer .5s infinite alternate;
 }
-
 @keyframes aparecer {
   0% {
       opacity: 0;
@@ -1765,32 +1768,29 @@ h1 {
       opacity: 1;
   }
 }
-
 .acertou {
   background: var(--verde);
   animation: aparecer 0.9s infinite alternate;
 }
-
 .errou {
   background: var(--vermelho);
   animation: aparecer 0.9s infinite alternate;
 }
-
 .placar {
   padding: 1rem;
   border-radius: 8px;
   background:#0d47a1;
   font-size: 2rem;
 }
-
 input[type="range"] {
   width: 80vw;
 }
-
-#numero{margin-right: 10px;}
-
-#total{margin-left: 10px;}
-
+#numero{
+  margin-right: 10px;
+}
+#total{
+  margin-left: 10px;
+}
 /*=== FIM QUIZ ===*/
 
 /*=== ESTATISTICAS ===*/
@@ -1799,11 +1799,9 @@ canvas {
   background: white;
   box-shadow: 3px 3px 3px rgba (0,0,0,0.1);
 }
-
 .estatistica-container{
   position: relative;
   margin: auto;
   height: 400px;
   width: 800px;
 }
-
