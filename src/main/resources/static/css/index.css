@@ -1488,6 +1488,10 @@ nav .sidebar-button i{
 .details-info{
   width: 100%;
 }
+.formInfos{
+  margin-left: -0.2rem;
+}
+
   @media(max-width: 700px){
     .Cadastro-Container .inputEmail2{
       width: 260%;
@@ -1497,33 +1501,68 @@ nav .sidebar-button i{
       display: flex;
       width: 100%;
       justify-content: flex-start;
-      margin-left: 9%;
+      margin-bottom: -6px;
     }
     .Cadastro-Container .senhas {
       gap:15px;
       flex-direction: column;
-      margin-left: 9%;
     }
     .Cadastro-Container .inputSenha {
-      margin-bottom: 0px;
+      margin-bottom: -23px;
       margin-right: 0px;
       width: 260%;
     }
     .Cadastro-Container .inputNovaSenha {
       width: 260%;
     }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2 {
+      width: 260%;
+    }
     .Cadastro-Container .inputConfirmaNovaSenha {
       margin-left: 0px;
       width: 260%;
     }
-    .Cadastro-Container .textConfirmaNovaSenha {
+    .Cadastro-Container .textConfirmaNovaSenha,  .Cadastro-Container .inputSobrenome,.Cadastro-Container .textSobrenome,  .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .textNumeroCelular2 {
       margin-left: 0px;
     }
-    .details-info{
-      margin-left: 2%;
+    .Cadastro-Container .textNumeroCelular2 {
+      margin-top: -10px;
+      margin-bottom: 3px;
     }
-    .details-info h2{
-      margin-left: 50px;
+    .Cadastro-Container .nomeCompleto{
+      flex-direction: column;
+    }
+    .formInfos{
+      margin-left: -9.2rem;
+    }
+    #confirmarSenha{
+      margin-top: -0.5rem;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 25%;
+    }
+  }
+  @media (max-width: 530px){
+    .formInfos{
+      margin-left: -5.2rem;
+    }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .inputNovaSenha, .Cadastro-Container .inputConfirmaNovaSenha, .Cadastro-Container .inputSenha, .Cadastro-Container .inputEmail2 {
+      width: 220%;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 13%;
+    }
+  }
+
+  @media (max-width: 376px){
+    .formInfos{
+      margin-left: -0.2rem;
+    }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .inputNovaSenha, .Cadastro-Container .inputConfirmaNovaSenha, .Cadastro-Container .inputSenha, .Cadastro-Container .inputEmail2 {
+      width: 172%;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 0;
     }
   }
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
