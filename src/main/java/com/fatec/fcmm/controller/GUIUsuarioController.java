@@ -19,7 +19,6 @@ import ch.qos.logback.core.model.Model;
 
 import org.springframework.web.servlet.view.RedirectView;
 
-
 @Controller
 @RequestMapping
 public class GUIUsuarioController {
@@ -27,13 +26,9 @@ public class GUIUsuarioController {
     @Autowired
     MantemUsuario service;
 
-    // @GetMapping("/usuario")
-    // public ModelAndView showUser(){
-    //     ModelAndView modelAndView = new ModelAndView("usuario/usuario");
-    //     modelAndView.addObject("usuarios", service.consultaTodos());
 
-    //     return modelAndView;
-    // }
+
+    //----CADASTRO USUARIO----\\
 
     // Requisição GET que irá mostrar a página de criação de Usuario
     @GetMapping("/criar-usuario")
@@ -44,18 +39,25 @@ public class GUIUsuarioController {
         return modelAndView;
     }
 
-    //Requisição POST que irá criar um novo Usuario
+    // Requisição POST que irá criar um novo Usuario
     @PostMapping("/criar-usuario")
-    public RedirectView createUsuario(@Valid Usuario usuario, BindingResult result){
-        if (result.hasErrors()){
-            return new RedirectView ("/criar-usuario");
+    public RedirectView createUsuario(@Valid Usuario usuario, BindingResult result) {
+        if (result.hasErrors()) {
+            return new RedirectView("/criar-usuario");
         }
 
-        if (!service.save(usuario).isPresent()){
+        if (!service.save(usuario).isPresent()) {
             ModelAndView mv = new ModelAndView("cadastroUsuario");
             mv.addObject("message", "Dados inválidos");
         }
 
         return new RedirectView("/crudAluno");
+    }
+
+    //-----LOGIN USUARIO-----\\
+
+    @GetMapping("/login")
+    public ModelAndView formLogin() {
+        return new ModelAndView("login");
     }
 }

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.fcmm.model.Usuario.Usuario;
@@ -26,7 +27,7 @@ import com.fatec.fcmm.model.Usuario.UsuarioDTO;
 import com.fatec.fcmm.services.MantemUsuarioI;
 
 @RestController
-@RequestMapping("/api/v1/usuario1")
+@RequestMapping("/sig/api/usuarios")
 /*
  * Trata as requisicoes HTTP enviadas pelo usuario do servico
  */
@@ -67,12 +68,6 @@ public class APIUsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Dados inválidos.");
         }
 
-        // try {
-        //     usuario.setDataNascimento(usuarioDTO.getDataNascimento());
-        // } catch (Exception e) {
-        //     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        // }
-
         try {
             return ResponseEntity.status(HttpStatus.CREATED).body(mantemUsuario.save(usuarioDTO.retornaUmUsuario()));
         } catch (Exception e) {
@@ -94,24 +89,31 @@ public class APIUsuarioController {
         return ResponseEntity.status(HttpStatus.OK).body("Usuário excluido");
     }
 
-    // @CrossOrigin 
-    // @PutMapping("/{id}")
-    // public ResponseEntity<Object> atualiza(@PathVariable long id, @RequestBody @Valid UsuarioDTO usuarioDTO,
-    //         BindingResult result) {
-    //     logger.info(">>>>>> api atualiza informações de usuário chamado");
-    //     if (result.hasErrors()) {
-    //         logger.info(">>>>>> apicontroller atualiza informações de usuário chamado dados invalidos");
-    //         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Dados inválidos.");
-    //     }
-    //     Optional<Usuario> u = mantemUsuario.consultaPorId(id);
-    //     if (u.isEmpty()) {
-    //         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado.");
-    //     }
+    @CrossOrigin 
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualiza(@PathVariable long id, @RequestBody @Valid UsuarioDTO usuarioDTO,
+            BindingResult result) {
+        logger.info(">>>>>> api atualiza informações de usuário chamado");
+        if (result.hasErrors()) {
+            logger.info(">>>>>> apicontroller atualiza informações de usuário chamado dados invalidos");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Dados inválidos.");
+        }
+        Optional<Usuario> u = mantemUsuario.consultaPorId(id);
+        if (u.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado.");
+        }
 
-    //     Optional<Usuario> usuario = mantemUsuario.atualiza(id,
-    //             usuarioDTO.retornaUmUsuario());
-    //     return ResponseEntity.status(HttpStatus.OK).body(usuario.get());
-    // }
+        Optional<Usuario> usuario = mantemUsuario.atualiza(id,
+                usuarioDTO.retornaUmUsuario());
+        return ResponseEntity.status(HttpStatus.OK).body(usuario.get());
+    }
+
+    @GetMapping("/quantidade")
+    @ResponseBody
+    public int getQuantidadeDeUsuarios(){
+        List<Usuario> usuarios = mantemUsuario.consultaTodos();
+        return usuarios.size();
+    }
 
    
 }

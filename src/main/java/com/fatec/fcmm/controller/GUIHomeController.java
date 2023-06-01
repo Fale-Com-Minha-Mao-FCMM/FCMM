@@ -32,10 +32,7 @@ public ModelAndView menu() {
 return new ModelAndView("index");
 }
 
-@GetMapping("/login")
-public ModelAndView formLogin() {
-    return new ModelAndView("login");
-}
+
 
 //@GetMapping("/crud")
 //public ModelAndView formCrud() {
@@ -62,10 +59,10 @@ public ModelAndView homeUsuario() {
     return new ModelAndView("homeUsuario");
 }
 
-@GetMapping("/crudEstatisticas")
-    public ModelAndView CrudEstatisticas() {
-    return new ModelAndView("crudAdminEstatisticas");
-    }
+// @GetMapping("/crudEstatisticas")
+//     public ModelAndView CrudEstatisticas() {
+//     return new ModelAndView("crudAdminEstatisticas");
+//     }
 
 @GetMapping("/capitulos")
 public ModelAndView capitulos() {

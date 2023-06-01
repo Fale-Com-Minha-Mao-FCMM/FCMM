@@ -68,6 +68,22 @@ sidebarBtn.onclick = function() {
         <span>Usuários</span>
         <a id="new" th:href="@{/criar-usuario-admin}">Adicionar Usuário</a>
       </div>
+      <div>
+        <h4>Quantidade de Usuários: <span id="quantidade-usuarios"></span></h4>
+      </div>
+      <script th:inline="javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+          fetch("/sig/api/usuarios/quantidade")
+          .then(response => response.text())
+          .then (data => {
+            const quantidadeUsuarios = document.getElementById("quantidade-usuarios");
+            quantidadeUsuarios.textContent = data;
+          })
+          .catch(error => {
+            console.error("Erro ao obter a quantidade de usuários: ", error);
+          });
+        })
+      </script>
 
       <div class="divTable">
         <table>

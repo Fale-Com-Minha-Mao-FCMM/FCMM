@@ -1,8 +1,5 @@
 package com.fatec.fcmm.model.Usuario;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
