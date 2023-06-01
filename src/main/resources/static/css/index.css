@@ -1879,3 +1879,50 @@ input[type="range"] {
   margin-left: 10px;
 }
 /*=== FIM QUIZ ===*/
+
+/*=== INICIO CAPITULO 1 ===*/
+.itenscapitulos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accordion{
+  max-width: 800px;
+}
+.accordion .contentBx{
+  position:relative;
+  margin: 10px 20px;
+}
+.accordion .contentBx .label{
+  position: relative;
+  padding: 10px;
+  background: #003087;
+  color: white;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.accordion .contentBx .label::before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+.accordion .contentBx.active .label::before{
+  content: '-';
+}
+.accordion .contentBx .content{
+  position: relative;
+  background: white;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+}
+.accordion .contentBx.active .content{
+  height: 150px;
+  padding: 10px;
+}
+/*=== FIM CAPITULO 1 ===*/
+

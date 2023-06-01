@@ -90,7 +90,7 @@ public ModelAndView InformacoesUsuario() {
 
 @GetMapping("/cap1")
 public ModelAndView MostraCap1(){
-    return new ModelAndView("capitulos/cap1");
+    return new ModelAndView("capitulos/capitulo1");
 }
 
 @GetMapping("/cap2")
