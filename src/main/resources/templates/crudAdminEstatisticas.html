@@ -12,7 +12,7 @@
     <!-- Icones -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-     
+    
     <title>Estatísticas</title>
    </head>
 <body>
@@ -54,6 +54,16 @@
       </ul>
   </div>
   <section class="home-section">
+    <div class="estatistica-container">
+      <canvas id="chart"></canvas>
+      <!--
+        <button onclick="addData()">Add Data</button>
+        <button onclick="removeData()">Remove Data</button>
+      -->
+    </div>
+    <!-- Script grafico-->
+    <script src="@{/node_modules/chart.js/dist/chart.js}"></script>
+    <script src="@{/js/static.js}"></script>
   <script>
     let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -65,9 +75,13 @@
       sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
  </script>
+<<<<<<< HEAD
 
  <canvas id="grafico"></canvas>
 
 
+=======
+ </section>
+>>>>>>> d42cee74f291c73c2c45a76a4a46c0c4b25c7df2
 </body>
 </html>

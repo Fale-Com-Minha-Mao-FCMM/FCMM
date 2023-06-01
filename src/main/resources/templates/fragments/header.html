@@ -9,6 +9,7 @@
     </meta>
     <title>Header</title>
     <script th:src="@{/js/contraste.js}"></script>
+    <script th:src="@{/js/mobile-navbar.js}"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
 </head>
 
@@ -35,20 +36,24 @@
         </div>
     
         <!-- navbar -->
-        <nav>
+        <nav id="navbar">
           <a id="logo" th:href="@{/}"></a>
-        <nav id="nav-header">
-          <a id="logo" th:href="@{/}">
-            <img th:src="@{../img/logo/logo.png}" alt="logo Fale com a minha mão">
-          </a>
-    
-          <ul class="nav-list">
-            <li><a th:href="@{/fale-conosco}">Fale conosco</a></li>
-            <li><a th:href="@{/sobre-nos}">Sobre nós</a></li>
-            <li><a th:href="@{/login}">Login</a></li>
-            <li><a th:href="@{/criar-usuario}">Cadastro</a></li>
-          </ul>
+          <input type="checkbox" id="menu-toggle" />
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <nav id="nav-header">
+            <a id="logo" th:href="@{/}">
+              <img th:src="@{../img/logo/logo.png}" alt="logo Fale com a minha mão">
+            </a>
+
+            <ul class="nav-list">
+              <li><a th:href="@{/fale-conosco}">Fale conosco</a></li>
+              <li><a th:href="@{/sobre-nos}">Sobre nós</a></li>
+              <li><a th:href="@{/login}">Login</a></li>
+              <li><a th:href="@{/criar-usuario}">Cadastro</a></li>
+            </ul>
+          </nav>
         </nav>
+
         <!-- responsividade da navbar -->
         <script th:src="@{/js/mobile-navbar.js}"></script>
         <script th:src="@{/js/font-size.js}"></script>

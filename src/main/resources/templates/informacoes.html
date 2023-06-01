@@ -24,7 +24,7 @@
             <div class="felipelindo">
             <div class="Cadastro-Container">
                 <h1>Suas informações!</h1>
-                <form action="#" th:action="@{/criar-usuario}" th:object="${usuario}" onsubmit="return validar();" method="POST">
+                <form action="#" th:action="@{/criar-usuario}" th:object="${usuario}" onsubmit="return validar();" method="POST" class="formInfos">
                     <div>
                         <h2>Informações pessoais</h2>
                         <div class="nomeCompleto">
@@ -42,7 +42,7 @@
                             </div>
                         </div>              
                     </div>
-                    <div>
+                    <div class="details-info">
                         <h2>Detalhes da Conta</h2>
                         <div>
                             <div class="email2">
@@ -62,7 +62,7 @@
                                     <label for="formSenha">Nova senha* </label><br>
                                     <input type="password" class="inputNovaSenha" name="inputNovaSenha" placeholder="************" field="*{senha}"><br>
                                 </div>
-                                <div>
+                                <div id="confirmarSenha"> 
                                     <label for="formConfirmaSenha" class="textConfirmaNovaSenha">Confirme nova Senha* </label><br>
                                     <input type="password" class="inputConfirmaNovaSenha" name="inputConfirmaNovaSenha" placeholder="************" field="*{confirmarSenha}"><br>
                                 </div>

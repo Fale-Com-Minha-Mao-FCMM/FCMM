@@ -19,7 +19,7 @@
     <script src="../js/contraste.js"></script> -->
 </head>
 <body>
-    <header th:insert="~{fragments/headerUsuario}"></header>
+    <header th:insert="~{fragments/header}"></header>
 
     <article>
         <section>
@@ -84,7 +84,9 @@
         <br>
         <br>
         <br>
-        <a id="btnQuiz" th:href="@{/quiz1}">Iniciar quiz</a>
+        <div class="divQuiz">
+          <a id="btnQuiz" th:href="@{/quiz1}">Iniciar quiz</a>
+        </div>
         <br>
         <br>
         <br>

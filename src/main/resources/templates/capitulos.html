@@ -14,6 +14,12 @@
   <script src="http://kit.fontawsome.com/a076d05399.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.css"/>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
   <!-- <script src="../static/validarCadastro.js"></script>
     <script src="../js/contraste.js"></script> -->
 </head>
@@ -23,29 +29,55 @@
 
   <div id="content">
     <h1>Capítulos</h1>
-    <div id="capitulos">
-        <div class="capitulos-details">
+    <div id="capitulos" class="owl-carousel">
+      <div class="capitulos-details">
         <img th:src="@{/img/backgrounds/bg3.jpg}">
         <div class="capitulos-title">
-        <p> Capítulo 1 </p>
-        <a class="btn_capitulo" th:href="@{/cap1}">Visualizar</a>
-      </div>
+          <p> Capítulo 1 </p>
+          <a class="btn_capitulo" th:href="@{/cap1}">Visualizar</a>
+        </div>
       </div>
       <div class="capitulos-details">
         <img th:src="@{/img/backgrounds/bg2.jpg}">
         <div class="capitulos-title">
-        <p> Capítulo 2 </p>
-        <a class="btn_capitulo" th:href="@{/cap2}">Visualizar</a>  <!--Falta configurar o HREF do botão para visualizar o capítulo-->
-      </div>
+          <p> Capítulo 2 </p>
+          <a class="btn_capitulo" th:href="@{/cap2}">Visualizar</a>
+        </div>
       </div>
       <div class="capitulos-details">
         <img th:src="@{/img/backgrounds/bg1.jpg}">
         <div class="capitulos-title">
-        <p> Capítulo 3 </p>
-        <a class="btn_capitulo" th:href="@{/cap3}">Visualizar</a>
+          <p> Capítulo 3 </p>
+          <a class="btn_capitulo" th:href="@{/cap3}">Visualizar</a>
+        </div>
       </div>
-      </div>
-    </div>
-  </body>
+    </div>    
+  </div>
+    <!--<button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>-->
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        loop:true, // Define se o carrossel será em loop ou não
+        margin:2, // Define a margem entre os itens
+        nav:false, // Define se serão exibidos botões de navegação
+        responsive:{ // Define as opções para diferentes tamanhos de tela
+          0:{
+            items:1 // Número de itens exibidos em telas menores que 600px
+          },
+          600:{
+            items:2 // Número de itens exibidos em telas maiores ou iguais a 600px
+          },
+          1000:{
+            items:3 // Número de itens exibidos em telas maiores ou iguais a 1000px
+          }
+        }
+      });
+    });
+  </script>
+  
+</body>    
   <footer th:insert="~{fragments/footer}"></footer>
   </html>

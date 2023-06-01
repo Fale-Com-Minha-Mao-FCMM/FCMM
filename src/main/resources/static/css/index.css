@@ -165,7 +165,6 @@ body {
     display: none;
   }
 }
-
 /*=== FIM DA BARRA DE ACESSIBILIDADE ====*/
 
 /*=== INÍCIO MENU ====*/
@@ -180,6 +179,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
+  position: fixed; /* Adicionado */
+  left: 20px
 }
 #logo a:hover {
   color: #fff;
@@ -199,7 +200,7 @@ body {
 }
 #nav-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: #003087;
@@ -207,6 +208,13 @@ body {
   margin-top: 0px;
   width: 100vw;
   z-index: 1;
+  padding-left: 250px
+}
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  margin-right: 20px;
 }
 .nav-list {
   list-style: none;
@@ -247,8 +255,72 @@ body {
   letter-spacing: 3px;
   margin-left: 32px;
 }
-.mobile-menu {
-  z-index: 1;
+#menu-toggle{
+  display: none;
+}
+
+/* Novo CSS para o navbar responsivo */
+@media only screen and (max-width: 603px) {
+  #nav-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 1rem;
+  }
+
+  #logo img { 
+    width: 210px;
+    margin-top: -70px;
+  }
+  .menu-icon {
+    display: inline-block;
+
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-list li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  input[type="checkbox"]:checked ~ .nav-list {
+    display: block;
+  }
+  #menu-toggle:checked ~ #navbar .nav-list {
+    display: block;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 20px;
+    color:white;
+    background-color: #003087;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 25px;
+    padding-top: 30px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked ~ #nav-header .nav-list {
+    display: block;
+    width: 100%;
+    margin-top: 122px;
+    border-radius: 0 0 0 10px;
+    background-color: #22488e;
+  }
 }
 /*=== FIM MENU ====*/
 
@@ -499,6 +571,18 @@ textarea{
   padding-bottom: 30px;
   font-size: 20px;
   color:#003087 
+}
+
+/* Carrossel */
+.owl-carousel {
+  display: flex;
+  justify-content: space-between; /* ou outra opção de alinhamento desejada */
+}
+.owl-carousel .capitulos-details {
+  flex: 0 0 auto; /* ou outra opção de dimensionamento desejada */
+  margin-right: 10px; /* ou outra margem desejada entre os itens */
+  max-width: 80%;
+  /* Restante das propriedades específicas para cada item do carrossel */
 }
 
 /*cards desenvolvedores*/
@@ -847,11 +931,9 @@ cursor: pointer;
     margin-bottom: 20px;
   }
 }
-
 /*=== FIM CADASTRO ====*/
 
 /*=== INÍCIO LOGIN ====*/
-
 .Login-Container{
   top: 100px;
   margin-bottom: 20vh;
@@ -866,9 +948,7 @@ cursor: pointer;
   border-radius: 32px;
   flex-direction: column;
   justify-content: center;
-  background-color: var;
 }
-
 .Login-Container h1{
   color: var(--dl-color-default-black);
   height: auto;
@@ -878,7 +958,6 @@ cursor: pointer;
   margin-right: 0;
   margin-bottom: 48px;
 }
-
 .Login-Container .inputEmail{
   top:2px;
   display: flex;
@@ -887,7 +966,6 @@ cursor: pointer;
   flex-direction: column;
   width: 100%;
 }
-
 .Login-Container .inputSenha{
   top:2px;
   display: flex;
@@ -896,7 +974,6 @@ cursor: pointer;
   flex-direction: column;
   width: 100%;
 }
-
 .Login-Container .inputSubmitEntrar{
   display: flex;
   padding: 10px 82px;
@@ -916,15 +993,36 @@ cursor: pointer;
   cursor: pointer;
   text-decoration: none;
   }
-
 .Login-Container .btnCadastro{
-  color:black
+  color:black;
 }
-
+@media (max-width: 426px) {
+  .Login-Container{
+    width: 374px;
+    margin-top: 1vh;
+  }
+}
+@media (max-width: 376px) {
+  .Login-Container{
+    width: 330px;
+  }
+  Login-Container h1{
+    font-size:22px
+  }
+}
+@media (max-width: 326px) {
+  .Login-Container{
+    width: 290px;
+    margin-top: 9vh;
+    padding: 15px;
+  }
+  .Login-Container h1{
+    font-size:22px
+  }
+}
 /*=== FIM LOGIN ====*/
 
 /*=== INÍCIO FOOTER LOGIN ===*/
-
 #footerLogin {
   position:absolute;
   width: 100%;
@@ -971,6 +1069,11 @@ cursor: pointer;
 .socialsLogin a:hover i {
   color: aqua;
 }
+@media (max-width: 768px) {
+  #footerLogin{
+    bottom: -19rem;
+  }
+}
 @media (max-width: 321px) {
   #footerLogin{
     bottom: -15em;
@@ -981,7 +1084,6 @@ cursor: pointer;
     bottom: -20em;
   }
 }
-
 /*=== FIM FOOTER LOGIN ===*/
 
 /*=== ÁREA DO ADMINISTRADOR ===*/
@@ -993,6 +1095,7 @@ cursor: pointer;
   display: flex;
   justify-content: center;
   margin-left:5%;
+  max-width: 600px;
 }
 /*=== FIM CRUD HOME ===*/
 
@@ -1026,7 +1129,7 @@ button {
 }
 #new {
   font-size: 1.1rem;
-  padding: 2%;
+  padding: 0.4rem;
   border-radius: 5px;
   border: none;
   color: white;
@@ -1318,6 +1421,8 @@ nav .sidebar-button i{
   justify-content: space-evenly;
   padding-top: 3rem;
   margin-bottom: 7rem;
+  max-width: 80%;
+  margin-left: 10%;
 }
 .capitulos-details{
   border-radius: 20px;
@@ -1489,6 +1594,84 @@ nav .sidebar-button i{
   text-decoration: none;
   cursor: pointer;
   }
+.details-info{
+  width: 100%;
+}
+.formInfos{
+  margin-left: -0.2rem;
+}
+  @media(max-width: 700px){
+    .Cadastro-Container .inputEmail2{
+      width: 260%;
+      margin-left: 0px;
+    }
+    .email2{
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      margin-bottom: -6px;
+    }
+    .Cadastro-Container .senhas {
+      gap:15px;
+      flex-direction: column;
+    }
+    .Cadastro-Container .inputSenha {
+      margin-bottom: -23px;
+      margin-right: 0px;
+      width: 260%;
+    }
+    .Cadastro-Container .inputNovaSenha {
+      width: 260%;
+    }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2 {
+      width: 260%;
+    }
+    .Cadastro-Container .inputConfirmaNovaSenha {
+      margin-left: 0px;
+      width: 260%;
+    }
+    .Cadastro-Container .textConfirmaNovaSenha,  .Cadastro-Container .inputSobrenome,.Cadastro-Container .textSobrenome,  .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .textNumeroCelular2 {
+      margin-left: 0px;
+    }
+    .Cadastro-Container .textNumeroCelular2 {
+      margin-top: -10px;
+      margin-bottom: 3px;
+    }
+    .Cadastro-Container .nomeCompleto{
+      flex-direction: column;
+    }
+    .formInfos{
+      margin-left: -9.2rem;
+    }
+    #confirmarSenha{
+      margin-top: -0.5rem;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 25%;
+    }
+  }
+  @media (max-width: 530px){
+    .formInfos{
+      margin-left: -5.2rem;
+    }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .inputNovaSenha, .Cadastro-Container .inputConfirmaNovaSenha, .Cadastro-Container .inputSenha, .Cadastro-Container .inputEmail2 {
+      width: 220%;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 13%;
+    }
+  }
+  @media (max-width: 376px){
+    .formInfos{
+      margin-left: -0.2rem;
+    }
+    .Cadastro-Container .inputName, .Cadastro-Container .inputSobrenome, .Cadastro-Container .inputNumeroCelular2, .Cadastro-Container .inputNovaSenha, .Cadastro-Container .inputConfirmaNovaSenha, .Cadastro-Container .inputSenha, .Cadastro-Container .inputEmail2 {
+      width: 172%;
+    }
+    .Cadastro-Container .inputSubmitSalvar{
+      margin-left: 0;
+    }
+  }
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
 
 /*=== INÍCIO CAPITULO 1 ===*/
@@ -1507,6 +1690,7 @@ nav .sidebar-button i{
   background-color: white;
   padding: 3rem;
   gap: 5rem;
+  max-width: 1000px;
 }
 .imagem {
   width: 25%;
@@ -1515,6 +1699,23 @@ iframe {
   width: 500px;
   margin: 0 auto;
   display: block; 
+}
+.divQuiz{
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 671px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+  #alfabeto,#pronomes,#cumprimentos,#numerais{
+    flex-direction: column;
+  }
 }
 @media (max-width: 540px) {
   .videos {
@@ -1534,8 +1735,6 @@ iframe {
   color: white;
   background-color: #003087;
   text-decoration: none;
-  margin-left: 65rem;
-  margin-top: 10rem;
 }
 /*=== FIM CAPITULO 1 ===*/
 
@@ -1582,7 +1781,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
 /* article que acomoda a questao completa */
 .questoes {
   user-select: none;
@@ -1594,7 +1792,6 @@ h1 {
   border-radius: 32px;
   margin-bottom: 0.625rem;
 }
-
 .questoes ol li {
   border: 1px solid var(--principal);
   display: block;
@@ -1602,39 +1799,31 @@ h1 {
   padding: 0.6rem;
   border-radius: 8px;
 }
-
 .questoes ol li:hover {
   background: var(--principal);
   cursor: pointer;
 }
-
 .bloqueado {
   display: none;
 }
-
 .bloqueado li:hover {
   display: none;
 }
-
 #instrucoes {
   font-size: 1rem;
   color: #191919;
   padding: 0.625rem;
   border-radius: 8px;
-
   display: flex;
   justify-content: center;
 }
-
 #aviso {
   color: var(--principal);
 }
-
 #autoria {
   margin-top: 0.625rem;
   font-size: 0.75rem;
 }
-
 /* ANIMACAO */
 
 /* Animar o input */
@@ -1649,15 +1838,12 @@ h1 {
   100% {
   }
 }
-
 .animar {
   animation: piscar .75s infinite alternate;
 }
-
 .aparecer {
   animation: aparecer .5s infinite alternate;
 }
-
 @keyframes aparecer {
   0% {
       opacity: 0;
@@ -1669,30 +1855,27 @@ h1 {
       opacity: 1;
   }
 }
-
 .acertou {
   background: var(--verde);
   animation: aparecer 0.9s infinite alternate;
 }
-
 .errou {
   background: var(--vermelho);
   animation: aparecer 0.9s infinite alternate;
 }
-
 .placar {
   padding: 1rem;
   border-radius: 8px;
   background:#0d47a1;
   font-size: 2rem;
 }
-
 input[type="range"] {
   width: 80vw;
 }
-
-#numero{margin-right: 10px;}
-
-#total{margin-left: 10px;}
-
+#numero{
+  margin-right: 10px;
+}
+#total{
+  margin-left: 10px;
+}
 /*=== FIM QUIZ ===*/
