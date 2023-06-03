@@ -1675,71 +1675,6 @@ nav .sidebar-button i{
   }
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
 
-/*=== INÍCIO CAPITULO 1 ===*/
-.titulo {
-  text-align: center;
-  color: #003087;
-  font-size: 40px;
-  padding-top: 3rem;
-}
-#alfabeto,#pronomes,#cumprimentos,#numerais{
-  display: flex;
-  align-items: center;
-  width: 95%;
-  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.10);
-  border-radius: 32px;
-  background-color: white;
-  padding: 3rem;
-  gap: 5rem;
-  max-width: 1000px;
-}
-.imagem {
-  width: 25%;
-}
-iframe {
-  width: 560px;
-  margin: 0 auto;
-  display: block; 
-}
-.divQuiz{
-  display: flex;
-  justify-content: center;
-}
-@media (max-width: 671px) {
-  .videos {
-    width: 300px;
-    height: 200px;
-  }
-  .imagem {
-    width: 300px;
-    height: 300px;
-  }
-  #alfabeto,#pronomes,#cumprimentos,#numerais{
-    flex-direction: column;
-  }
-}
-@media (max-width: 540px) {
-  .videos {
-    width: 300px;
-    height: 200px;
-  }
-  .imagem {
-    width: 300px;
-    height: 300px;
-  }
-}
-#btnQuiz {
-  font-size: 20px;
-  padding: 13px;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  background-color: #003087;
-  text-decoration: none;
-}
-
-/*=== FIM CAPITULO 1 ===*/
-
 /*=== INÍCIO QUIZ ===*/
 section {
   width: 100vw;
@@ -1882,7 +1817,7 @@ input[type="range"] {
 }
 /*=== FIM QUIZ ===*/
 
-/*=== INICIO CAPITULO 1 ===*/
+/*=== INICIO CAPÍTULOS INSIDE ===*/
 .itenscapitulos{
   display: flex;
   justify-content: center;
@@ -1927,5 +1862,46 @@ input[type="range"] {
   height: auto;
   padding: 10px;
 }
-/*=== FIM CAPITULO 1 ===*/
+.imagem {
+  width: 50%;
+}
+iframe {
+  width: 560px;
+  margin: 0 auto;
+  display: block; 
+}
+.divQuiz{
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 671px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 540px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+}
+#btnQuiz {
+  font-size: 20px;
+  padding: 13px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #003087;
+  text-decoration: none;
+}
+/*=== FIM CAPÍTULOS INSIDE ===*/
 
