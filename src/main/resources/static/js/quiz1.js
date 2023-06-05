@@ -1,25 +1,31 @@
-let titulo     = document.querySelector('h1')
-let instrucoes = document.querySelector('#instrucoes')
-let aviso      = document.querySelector('#aviso')
-let progresso  = document.querySelector('#progresso')
+let titulo     = document.querySelector('h1');
+let instrucoes = document.querySelector('#instrucoes');
+let aviso      = document.querySelector('#aviso');
+let progresso  = document.querySelector('#progresso');
 let pontos = 0 // pontos para o placar
 let placar = 0 // placar
 
+// AUDIO
+let somAcerto   = document.querySelector('#somAcerto');
+let somErro     = document.querySelector('#somErro');
+let somAplausos = document.querySelector('#somAplausos');
+
 // PERGUNTA
-let numQuestao = document.querySelector('#numQuestao')
-let imgQuestao = document.querySelector('.imagemDoQuiz img')  // ADICIONE
-let pergunta   = document.querySelector('#pergunta')
+let numQuestao = document.querySelector('#numQuestao');
+let imgQuestao = document.querySelector('.imagemDaQuestao img');  // ADICIONE
+let imgPergunta = document.querySelector('.imagemDaPergunta img');
+let pergunta   = document.querySelector('#pergunta');
 
 // ALTERNATIVAS
-let a = document.querySelector('#a')
-let b = document.querySelector('#b')
-let c = document.querySelector('#c')
-let d = document.querySelector('#d')
+let a = document.querySelector('#a');
+let b = document.querySelector('#b');
+let c = document.querySelector('#c');
+let d = document.querySelector('#d');
 
 // article com a class questoes
-let articleQuestoes = document.querySelector('.questoes')
+let articleQuestoes = document.querySelector('.questoes');
 // ol li com as alternativas
-let alternativas = document.querySelector('#alternativas')
+let alternativas = document.querySelector('#alternativas');
 
 const q0 = {
     numQuestao   : 0,
@@ -33,13 +39,13 @@ const q0 = {
 }
 const q1 = {
     numQuestao   : 1,
-    imagem       : '../../img/quiz/1.png',  // Imagem do alfabeto
-    pergunta     : "Esses sinais representam...",
-    alternativaA : 'Números',
-    alternativaB : "Cores",
-    alternativaC : "Animais",
-    alternativaD : "Alfabeto",
-    correta      : "Alfabeto",
+    imagem       : '<iframe width="560" height="315" src="https://cdn.evg.gov.br/libras/v1/licoes/modulo01licao01.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',  // Código de incorporação do primeiro vídeo do YouTube,  // Imagem do alfabeto
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de saudade é realizado. ",
+    alternativaA : "Alternativa A",
+    alternativaB : "Alternativa B",
+    alternativaC : "Alternativa C",
+    alternativaD : "Alternativa D",
+    correta      : "Alternativa ",
 }
 const q2 = {
     numQuestao   : 2,
@@ -135,23 +141,24 @@ const q10 = {
 // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
 const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
 
-let numero = document.querySelector('#numero')
-let total  = document.querySelector('#total')
+let numero = document.querySelector('#numero');
+let total  = document.querySelector('#total');
 
-numero.textContent = q1.numQuestao
+numero.textContent = q1.numQuestao;
 
-let totalDeQuestoes = (questoes.length)-1
-console.log("Total de questões " + totalDeQuestoes)
-total.textContent = totalDeQuestoes
+let totalDeQuestoes = (questoes.length)-1;
+console.log("Total de questões " + totalDeQuestoes);
+total.textContent = totalDeQuestoes;
 
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
-numQuestao.textContent = q1.numQuestao
-imgQuestao.setAttribute('src', 'images/'+q1.imagem)  // ADICIONE
-pergunta.textContent   = q1.pergunta
-a.textContent = q1.alternativaA
-b.textContent = q1.alternativaB
-c.textContent = q1.alternativaC
-d.textContent = q1.alternativaD
+numQuestao.textContent = q1.numQuestao;
+//imgQuestao.setAttribute('src');  // ADICIONE
+divVideo.innerHTML = questoes[nQuestao].videoEmbed;
+pergunta.textContent   = q1.pergunta;
+a.textContent = q1.alternativaA;
+b.textContent = q1.alternativaB;
+c.textContent = q1.alternativaC;
+d.textContent = q1.alternativaD;
 
 // CONFIGURAR O VALUE INICIAL DA 1a QUESTAO COMPLETA
 a.setAttribute('value', '1A')
@@ -163,7 +170,8 @@ d.setAttribute('value', '1D')
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
-    imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem) // ADICIONE
+    //imgQuestao.setAttribute('src') // ADICIONE
+    divVideo.innerHTML = questoes[nQuestao].videoEmbed;
     pergunta.textContent   = questoes[nQuestao].pergunta
     a.textContent = questoes[nQuestao].alternativaA
     b.textContent = questoes[nQuestao].alternativaB
@@ -213,21 +221,23 @@ function verificarSeAcertou(nQuestao, resposta) {
     console.log("Questão " + numeroDaQuestao)
 
     let respostaEscolhida = resposta.textContent
-    //console.log("RespU " + respostaEscolhida)
+    console.log("RespU " + respostaEscolhida)
 
     let certa = questoes[numeroDaQuestao].correta
-    //console.log("RespC " + certa)
+    console.log("RespC " + certa)
 
     if(respostaEscolhida == certa) {
         //console.log("Acertou")
         //respostaEsta.textContent = "Correta 😊"
         piscarNoAcerto()
+        //somAcerto.play()
         pontos += 10 // pontos = pontos + 10
         if(nQuestao.value == 1 && pontos == 20) { pontos = 10 }
     } else {
         //console.log("Errou!")
         //respostaEsta.textContent = "Errada 😢"
         piscarNoErro()
+        //somErro.play()
     }
     setTimeout(() => {
         tirarPiscar()
@@ -254,41 +264,43 @@ function verificarSeAcertou(nQuestao, resposta) {
     desbloquearAlternativas()
 }
 
+ function fimDeJogo(){
+    if (pontos >= 70){
+        window.location.href = '../ṕhp/dashboard.php';
+    } else {
+        window.location.reload(false);
+    }
+}  
+
 function fimDoJogo() {
 
-    let s = 's'
-    pontos == 0 ? s = '' : s = s
-    instrucoes.textContent = "Fim de Jogo! Você conseguiu " + pontos + " ponto"+ s
+    if (pontos >= 70){
+        let s = 's'
+        pontos == 0 ? s = '' : s = s
+        instrucoes.textContent = "Parabens! Você conseguiu " + pontos + " ponto"+ s
+        instrucoes.classList.add('placar')
+        //document.querySelector('.fim').style.display = "block";
+        document.getElementById("fimBotao").innerHTML = "Continuar";
 
-    instrucoes.classList.add('placar')
-    document.querySelector('.fim').style.display = "block";
-    document.getElementById("fimBotao").innerHTML = "Continuar";
+
 
     // OCULTAR O ARTICLE DA QUESTAO
-    articleQuestoes.style.display = 'none'
-
-} else {
-    let s = 's'
-    pontos == 0 ? s = '' : s = s
-    instrucoes.textContent = "Que pena! Você conseguiu apenas " + pontos + " ponto"+ s + ", tente novamente."
-    instrucoes.classList.add('placar')
-    document.querySelector('.fim').style.display = "block";
-    document.getElementById("fimBotao").innerHTML = "Repetir";
-    
-// OCULTAR O ARTICLE DA QUESTAO
-    articleQuestoes.style.display = 'none'
-      }
+        articleQuestoes.style.display = 'none'
+    } else {
+        let s = 's'
+        pontos == 0 ? s = '' : s = s
+        instrucoes.textContent = "Que pena! Você conseguiu apenas " + pontos + " ponto"+ s + ", tente novamente."
+        instrucoes.classList.add('placar')
+        //document.querySelector('.fim').style.display = "block";
+        //document.getElementById("fimBotao").innerHTML = "Repetir";
+        
+    // OCULTAR O ARTICLE DA QUESTAO
+        articleQuestoes.style.display = 'none'
+    }
 
     somAplausos.play()
 }
 
-    setTimeout(function() {
-        pontos = 0 // zerar placar
-        //location.reload();
-        instrucoes.classList.remove('placar')
-        // REINICIAR O JOGO
-        /*
-        articleQuestoes.style.display = 'block'
-        proximaQuestao(1)
-        instrucoes.textContent = 'Leia a questão e clique na resposta correta'*/
-    }, 8000)
+/* function retornar(){
+    window.location.href = '../html/unidade1.html';
+}  */

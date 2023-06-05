@@ -171,7 +171,6 @@ body {
 /*logo header fcmm*/
 #logo img { 
   width: 210px;
-  position: fixed;
 }
 #logo {
   z-index: 0;
@@ -180,8 +179,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
-  position: fixed; /* Adicionado */
-  left: 20px
+  left: 7%;
 }
 #logo a:hover {
   color: #fff;
@@ -201,7 +199,7 @@ body {
 }
 #nav-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: #003087;
@@ -209,7 +207,7 @@ body {
   margin-top: 0px;
   width: 100vw;
   z-index: 1;
-  padding-left: 250px
+  padding-left: 6%;
 }
 .menu-icon {
   display: none;
@@ -220,6 +218,7 @@ body {
 .nav-list {
   list-style: none;
   display: flex;
+  margin-right: 6%;
 }
 .nav-list li {
   list-style: none;
@@ -318,9 +317,10 @@ body {
   input[type="checkbox"]:checked ~ #nav-header .nav-list {
     display: block;
     width: 100%;
-    margin-top: 122px;
+    margin-top: -20px;
     border-radius: 0 0 0 10px;
     background-color: #22488e;
+    z-index: 0;
   }
 }
 /*=== FIM MENU ====*/
@@ -1748,7 +1748,7 @@ h1 {
 }
 #instrucoes {
   font-size: 1rem;
-  color: #191919;
+  color: white;
   padding: 0.625rem;
   border-radius: 8px;
   display: flex;
