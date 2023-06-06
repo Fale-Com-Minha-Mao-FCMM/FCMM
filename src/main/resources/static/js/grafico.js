@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 data: {
                     labels: labels.map(label => `Capítulo ${label}`), // Atualizando os rótulos dos capítulos
                     datasets: [{
-                        label: "",
+                        label: "Quantidades de usuários em cada capítulo",
                         data: contagens,
-                        // backgroundColor: backgroundColors,
+                        backgroundColor: backgroundColors,
                         borderWidth: 1
                     }]
                 },

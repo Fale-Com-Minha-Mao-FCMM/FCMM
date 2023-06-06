@@ -1,36 +1,21 @@
-function confirmarExclusao(event) {
-  event.preventDefault();
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: 'btn btn-success',
-      cancelButton: 'btn btn-danger'
-    },
-    buttonsStyling: false
-  })
-
-  swalWithBootstrapButtons.fire({
-    title: 'Você term certeza que deseja excluir?',
-    text: "Essa ação é irreversível",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonText: 'Sim',
-    cancelButtonText: 'Não',
-    reverseButtons: true
-  }).then((result) => {
-    if (result.isConfirmed) {
-      swalWithBootstrapButtons.fire(
-        'Excluído!',
-        'Sucesso'
-      )
-    } else if (
-      /* Read more about handling dismissals below */
-      result.dismiss === Swal.DismissReason.cancel
-    ) {
-      swalWithBootstrapButtons.fire(
-        'Cancelado',
-        'Sua operação foi cancelada.',
-        'Erro'
-      )
+function confirmarExclusao() {
+  swal({
+    title: "Tem certeza?",
+    text: "O usuário será excluído permanentemente",
+    icon: "warning",
+    buttons: ["Cancelar", "Excluir"],
+    dangerMode: true,
+  }).then ((confirmacao) => {
+    if (confirmacao) {
+      //Usuario opta por excluir
+      swal ("Usuario excluído!", {
+        icon: "success",
+      });
+    } else {
+      swal ("Operação cancelada", {
+        icon : "info",
+      })
     }
   })
+
 }

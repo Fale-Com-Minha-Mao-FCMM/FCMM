@@ -27,10 +27,7 @@
                                     <label for="formConfirmaEmail">Confirmar email* </label><br>
                                     <input type="email" class="inputConfirmaEmail" name="inputConfirmaEmail" id="inputConfirmaEmail" placeholder="seuemail@email.com" th:field="*{confirmarEmail}" minlength="6" required><br>
                                 </div>
-                                <div>
-                                    <label for="formConfirmaEmail">CapAtual* </label><br>
-                                    <input type="number" class="inputConfirmaEmail" name="inputConfirmaEmail" id="inputConfirmaEmail" placeholder="seuemail@email.com" th:field="*{capAtual}" minlength="6" required><br>
-                                </div>
+                                <!-- GAMBIARRA -->
                             </div>
                         </div>
                         <div>
@@ -44,8 +41,13 @@
                                     <input type="password" class="inputConfirmaSenha" name="inputConfirmaSenha" placeholder="************" th:field="*{confirmarSenha}" minlength="4" required><br>
                                 </div>
                             </div>
+                            <div>
+                                <label for="formConfirmaEmail">Capitulo Atual* </label><br>
+                                <input type="number" class="inputConfirmaEmail" name="inputConfirmaEmail" id="inputConfirmaEmail" placeholder="Capitulo Atual" th:field="*{capAtual}" minlength="6" required><br>
+                            </div>
                         </div>
                     </div>
+                    <br> 
                     <div>
                         <h2>Informações pessoais</h2>
                         <div class="nomeCompleto">
