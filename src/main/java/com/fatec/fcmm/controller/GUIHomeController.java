@@ -90,17 +90,17 @@ public ModelAndView InformacoesUsuario() {
 
 @GetMapping("/cap1")
 public ModelAndView MostraCap1(){
-    return new ModelAndView("capitulos/cap1");
+    return new ModelAndView("capitulos/capitulo1");
 }
 
 @GetMapping("/cap2")
 public ModelAndView MostraCap2(){
-    return new ModelAndView("capitulos/cap2");
+    return new ModelAndView("capitulos/capitulo2");
 }
 
 @GetMapping("/cap3")
 public ModelAndView MostraCap3(){
-    return new ModelAndView("capitulos/cap3");
+    return new ModelAndView("capitulos/capitulo3");
 }
 
 @GetMapping("/quiz1")

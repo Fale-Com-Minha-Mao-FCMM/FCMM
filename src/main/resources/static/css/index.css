@@ -179,8 +179,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
+<<<<<<< HEAD
   position: absolute; /* Adicionado */
   left: 20px
+=======
+  left: 7%;
+>>>>>>> a5b405fdc4af2b68d2633433e1dcef5b28635d03
 }
 #logo a:hover {
   color: #fff;
@@ -200,7 +204,7 @@ body {
 }
 #nav-header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
   background: #003087;
@@ -208,7 +212,7 @@ body {
   margin-top: 0px;
   width: 100vw;
   z-index: 1;
-  padding-left: 250px
+  padding-left: 6%;
 }
 .menu-icon {
   display: none;
@@ -219,6 +223,7 @@ body {
 .nav-list {
   list-style: none;
   display: flex;
+  margin-right: 6%;
 }
 .nav-list li {
   list-style: none;
@@ -317,9 +322,10 @@ body {
   input[type="checkbox"]:checked ~ #nav-header .nav-list {
     display: block;
     width: 100%;
-    margin-top: 122px;
+    margin-top: -20px;
     border-radius: 0 0 0 10px;
     background-color: #22488e;
+    z-index: 0;
   }
 }
 /*=== FIM MENU ====*/
@@ -1674,70 +1680,6 @@ nav .sidebar-button i{
   }
 /*=== FIM FORM EDITAR INFORMAÇÕES ===*/
 
-/*=== INÍCIO CAPITULO 1 ===*/
-.titulo {
-  text-align: center;
-  color: #003087;
-  font-size: 40px;
-  padding-top: 3rem;
-}
-#alfabeto,#pronomes,#cumprimentos,#numerais{
-  display: flex;
-  align-items: center;
-  width: 95%;
-  box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.10);
-  border-radius: 32px;
-  background-color: white;
-  padding: 3rem;
-  gap: 5rem;
-  max-width: 1000px;
-}
-.imagem {
-  width: 25%;
-}
-iframe {
-  width: 500px;
-  margin: 0 auto;
-  display: block; 
-}
-.divQuiz{
-  display: flex;
-  justify-content: center;
-}
-@media (max-width: 671px) {
-  .videos {
-    width: 300px;
-    height: 200px;
-  }
-  .imagem {
-    width: 300px;
-    height: 300px;
-  }
-  #alfabeto,#pronomes,#cumprimentos,#numerais{
-    flex-direction: column;
-  }
-}
-@media (max-width: 540px) {
-  .videos {
-    width: 300px;
-    height: 200px;
-  }
-  .imagem {
-    width: 300px;
-    height: 300px;
-  }
-}
-#btnQuiz {
-  font-size: 20px;
-  padding: 13px;
-  border-radius: 5px;
-  border: none;
-  color: white;
-  background-color: #003087;
-  text-decoration: none;
-}
-/*=== FIM CAPITULO 1 ===*/
-
 /*=== INÍCIO QUIZ ===*/
 section {
   width: 100vw;
@@ -1811,7 +1753,7 @@ h1 {
 }
 #instrucoes {
   font-size: 1rem;
-  color: #191919;
+  color: white;
   padding: 0.625rem;
   border-radius: 8px;
   display: flex;
@@ -1879,3 +1821,92 @@ input[type="range"] {
   margin-left: 10px;
 }
 /*=== FIM QUIZ ===*/
+
+/*=== INICIO CAPÍTULOS INSIDE ===*/
+.itenscapitulos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.accordion{
+  max-width: 800px;
+}
+.accordion .contentBx{
+  position:relative;
+  margin: 10px 20px;
+}
+.accordion .contentBx .label{
+  position: relative;
+  padding: 10px;
+  background: #003087;
+  color: white;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.accordion .contentBx .label::before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+.accordion .contentBx.active .label::before{
+  content: '-';
+}
+.accordion .contentBx .content{
+  position: relative;
+  background: white;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+}
+.accordion .contentBx.active .content{
+  height: auto;
+  padding: 10px;
+}
+.imagem {
+  width: 50%;
+}
+iframe {
+  width: 560px;
+  margin: 0 auto;
+  display: block; 
+}
+.divQuiz{
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 671px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media (max-width: 540px) {
+  .videos {
+    width: 300px;
+    height: 200px;
+  }
+  .imagem {
+    width: 300px;
+    height: 300px;
+  }
+}
+#btnQuiz {
+  font-size: 20px;
+  padding: 13px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #003087;
+  text-decoration: none;
+}
+/*=== FIM CAPÍTULOS INSIDE ===*/
+
