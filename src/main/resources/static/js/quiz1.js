@@ -39,7 +39,7 @@ const q0 = {
 }
 const q1 = {
     numQuestao   : 1,
-    imagem       : '<iframe width="560" height="315" src="https://cdn.evg.gov.br/libras/v1/licoes/modulo01licao01.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',  // Código de incorporação do primeiro vídeo do YouTube,  // Imagem do alfabeto
+    imagem       : '../../img/quiz/1.png',// Imagem do alfabeto
     pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de saudade é realizado. ",
     alternativaA : "Alternativa A",
     alternativaB : "Alternativa B",
@@ -152,7 +152,7 @@ total.textContent = totalDeQuestoes;
 
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
 numQuestao.textContent = q1.numQuestao;
-//imgQuestao.setAttribute('src');  // ADICIONE
+imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem); // ADICIONE
 divVideo.innerHTML = questoes[nQuestao].videoEmbed;
 pergunta.textContent   = q1.pergunta;
 a.textContent = q1.alternativaA;
@@ -170,7 +170,7 @@ d.setAttribute('value', '1D')
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
-    //imgQuestao.setAttribute('src') // ADICIONE
+    imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem); // ADICIONE
     divVideo.innerHTML = questoes[nQuestao].videoEmbed;
     pergunta.textContent   = questoes[nQuestao].pergunta
     a.textContent = questoes[nQuestao].alternativaA
