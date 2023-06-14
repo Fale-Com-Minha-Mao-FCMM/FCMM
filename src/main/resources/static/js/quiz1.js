@@ -1,35 +1,31 @@
-let titulo     = document.querySelector('h1');
-let instrucoes = document.querySelector('#instrucoes');
-let aviso      = document.querySelector('#aviso');
-let progresso  = document.querySelector('#progresso');
+let titulo     = document.querySelector('h1')
+let instrucoes = document.querySelector('#instrucoes')
+let aviso      = document.querySelector('#aviso')
+let progresso  = document.querySelector('#progresso')
 let pontos = 0 // pontos para o placar
 let placar = 0 // placar
 
-// AUDIO
-let somAcerto   = document.querySelector('#somAcerto');
-let somErro     = document.querySelector('#somErro');
-let somAplausos = document.querySelector('#somAplausos');
-
 // PERGUNTA
-let numQuestao = document.querySelector('#numQuestao');
-let imgQuestao = document.querySelector('.imagemDaQuestao img');  // ADICIONE
-let imgPergunta = document.querySelector('.imagemDaPergunta img');
-let pergunta   = document.querySelector('#pergunta');
+let numQuestao = document.querySelector('#numQuestao')
+//let imgQuestao = document.querySelector('.imagemDoQuiz img')  // ADICIONE
+let videoQuestao = document.querySelector('.videoDoQuiz video'); // ADICIONE
+let pergunta   = document.querySelector('#pergunta')
 
 // ALTERNATIVAS
-let a = document.querySelector('#a');
-let b = document.querySelector('#b');
-let c = document.querySelector('#c');
-let d = document.querySelector('#d');
+let a = document.querySelector('#a')
+let b = document.querySelector('#b')
+let c = document.querySelector('#c')
+let d = document.querySelector('#d')
 
 // article com a class questoes
-let articleQuestoes = document.querySelector('.questoes');
+let articleQuestoes = document.querySelector('.questoes')
 // ol li com as alternativas
-let alternativas = document.querySelector('#alternativas');
+let alternativas = document.querySelector('#alternativas')
 
 const q0 = {
     numQuestao   : 0,
-    imagem       : '../img/quiz/0.jpeg',  // Adicionar imagem
+    //imagem       : '../img/quiz/0.jpeg',  // Adicionar imagem
+    video: '../videos/quiz/0.mp4', // Coloque o URL do vídeo
     pergunta     : "Pergunta",
     alternativaA : "Alternativa A",
     alternativaB : "Alternativa B",
@@ -39,126 +35,136 @@ const q0 = {
 }
 const q1 = {
     numQuestao   : 1,
-    imagem       : '../../img/quiz/1.png',// Imagem do alfabeto
-    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de saudade é realizado. ",
-    alternativaA : "Alternativa A",
-    alternativaB : "Alternativa B",
-    alternativaC : "Alternativa C",
-    alternativaD : "Alternativa D",
-    correta      : "Alternativa ",
+    //imagem       : '../img/quiz/1.png',  // Colocar vídeo
+    video: '../img/quiz/modulo02licao01.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de saudade é realizado.",
+    alternativaA : "Alternativa A: Amor",
+    alternativaB : "Alternativa B: Saudade",
+    alternativaC : "Alternativa C: Tristeza",
+    alternativaD : "Alternativa D: Medo",
+    correta      : "Alternativa B: Saudade",
 }
 const q2 = {
     numQuestao   : 2,
-    imagem       : '../../img/quiz/2.png',  // Imagem com um sinal se referindo a um pássaro
-    pergunta     : "A que animal se refere?",
-    alternativaA : "Pássaro",
-    alternativaB : "Leão",
-    alternativaC : "Cobra",
-    alternativaD : "Macaco",
-    correta      : "Pássaro",
+    //imagem       : '../../img/quiz/2.png',  // Colocar vídeo
+    video: '../img/quiz/modulo02licao02.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de esperança é realizado.",
+    alternativaA : "Alternativa A: Saudade",
+    alternativaB : "Alternativa B: Medo",
+    alternativaC : "Alternativa C: Esperança",
+    alternativaD : "Alternativa D: Dor",
+    correta      : "Alternativa C: Esperança",
 }
 const q3 = {
     numQuestao   : 3,
-    imagem       : '../../img/quiz/3.png',  // Imagem com sinal de Palmas
-    pergunta     : "O sinal se refere a...",
-    alternativaA : "Palmas",
-    alternativaB : "Abraço",
-    alternativaC : "Saudação",
-    alternativaD : "Despedida",
-    correta      : "Palmas",
+    //imagem       : '../../img/quiz/3.png',  // Colocar vídeo
+    video: '../img/quiz/modulo02licao03.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que os sinais de felicidade, alegria, sono e dor são realizados.",
+    alternativaA : "Alternativa A: Felicidade, sono, medo e dor",
+    alternativaB : "Alternativa B: Alegria, calor, raiva e medo",
+    alternativaC : "Alternativa C: Alegria, amor, ódio e fome",
+    alternativaD : "Alternativa D: Felicidade, alegria, sono e dor",
+    correta      : "Alternativa D: Felicidade, alegria, sono e dor",
 }
 const q4 = {
     numQuestao   : 4,
-    imagem       : '../../img/quiz/4.png',  // imagem que faz sinal de apresentação: eu e vc
-    pergunta     : "Os sinais acima faz alusão ao que?",
-    alternativaA : "Sinais de sol e lua",
-    alternativaB : "Sinais de hoje e ontem",
-    alternativaC : "Sinais de agora e depois",
-    alternativaD : "Sinais de eu e você",
-    correta      : "Sinais de eu e você",
+    //imagem       : '../../img/quiz/4.png',  // Colocar vídeo
+    video: '../img/quiz/modulo02licao04.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal é realizado com a expressão facial correta:",
+    alternativaA : "Alternativa A: Sinal: irritado/Expressão: irritado",
+    alternativaB : "Alternativa B: Sinal: cansaço/Expressão: fome",
+    alternativaC : "Alternativa C: Sinal: frio/Expressão: fome",
+    alternativaD : "Alternativa D: Sinal: paixão/Expressão: tristeza",
+    correta      : "Alternativa A: Sinal: irritado/Expressão: irritado",
 }
 const q5 = {
     numQuestao   : 5,
-    imagem       : '../../img/quiz/5.png',  // Imagem com sinais de pronomes masculino e feminino
-    pergunta     : "As imagens acima se referem a quais pronomes?",
-    alternativaA : "Ele/Dele",
-    alternativaB : "Ele/Dele e Ela/Dela",
-    alternativaC : "Ela/Dela e Ele/Dele",
-    alternativaD : "Ela/Dela",
-    correta      : "Ele/Dele e Ela/Dela",
+    //imagem       : '../../img/quiz/5.png',  // Colocar vídeo
+    video: '../img/quiz/modulo02licao05.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal é realizado com a expressão facial correta:",
+    alternativaA : "Alternativa A: Sinal: triste/Expressão: alegre",
+    alternativaB : "Alternativa B: Sinal: feliz/Expressão: triste",
+    alternativaC : "Alternativa C: Sinal: sono/Expressão: feliz",
+    alternativaD : "Alternativa D: Sinal: dor/Expressão: dor",
+    correta      : "Alternativa D: Sinal: dor/Expressão: dor",
 }
 const q6 = {
     numQuestao   : 6,
-    imagem       : '../../img/quiz/6.png',  // Imagem com saudação de oi e boa noite
-    pergunta     : "Ao que os sinais acima se referem?",
-    alternativaA : "Oi, Boa noite",
-    alternativaB : "Oi, Bom dia",
-    alternativaC : "Olá, Boa tarde",
-    alternativaD : "Olá, Boa noite",
-    correta      : "Oi, Boa noite",
+    //imagem       : '../../img/quiz/6.png',  // Imagem com saudação de oi e boa noite
+    video: '../img/quiz/modulo02licao06.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de mãe é realizado.",
+    alternativaA : "Alternativa A: Pai",
+    alternativaB : "Alternativa B: Mãe",
+    alternativaC : "Alternativa C: Filho",
+    alternativaD : "Alternativa D: Avó",
+    correta      : "Alternativa B: Mãe",
 }
 const q7 = {
     numQuestao   : 7,
-    imagem       : '../../img/quiz/7.png',  // Imagem perguntando qual o seu nome
-    pergunta     : "A qual pergunta se refere a imagem acima?",
-    alternativaA : "Qual sua idade?",
-    alternativaB : "Qual seu signo?",
-    alternativaC : "Qual seu apelido?",
-    alternativaD : "Qual seu nome?",
-    correta      : "Qual seu nome?",
+    //imagem       : '../../img/quiz/7.png',  // Imagem perguntando qual o seu nome
+    video: '../img/quiz/modulo02licao07.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de pai é realizado",
+    alternativaA : "Alternativa A: Avô",
+    alternativaB : "Alternativa B: Filho",
+    alternativaC : "Alternativa C: Pai",
+    alternativaD : "Alternativa D: Mãe",
+    correta      : "Alternativa C: Pai",
 }
 const q8 = {
     numQuestao   : 8,
-    imagem       : '../../img/quiz/8.png',  // Imagens com números: 1,3,5,7 e 9
-    pergunta     : "Quais os números descritos acima?",
-    alternativaA : "1, 2, 3, 4 e 5",
-    alternativaB : "2, 4, 6, 8 e 10",
-    alternativaC : "1, 3, 5, 7 e 9",
-    alternativaD : "9, 6, 7, 3 e 1",
-    correta      : "1, 3, 5, 7 e 9",
+    //imagem       : '../../img/quiz/8.png',  // Imagens com números: 1,3,5,7 e 9
+    video: '../img/quiz/modulo02licao08.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de filha é realizado.",
+    alternativaA : "Alternativa A: Vovó",
+    alternativaB : "Alternativa B: Mãe",
+    alternativaC : "Alternativa C: Neta",
+    alternativaD : "Alternativa D: Filha",
+    correta      : "Alternativa D: Filha",
 }
 const q9 = {
     numQuestao   : 9,
-    imagem       : '../../img/quiz/9.png',  // Imagem com numerais formando 2002
-    pergunta     : "A qual ano se refere a imagem acima?",
-    alternativaA : "2004",
-    alternativaB : "2002",
-    alternativaC : "2020",
-    alternativaD : "2022",
-    correta      : "2002",
+    //imagem       : '../../img/quiz/9.png',  // Imagem com numerais formando 2002
+    video: '../img/quiz/modulo02licao09.mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o sinal de neta é realizado.",
+    alternativaA : "Alternativa A: Mulher",
+    alternativaB : "Alternativa B: Neta",
+    alternativaC : "Alternativa C: Neto",
+    alternativaD : "Alternativa D: Mãe",
+    correta      : "Alternativa B: Neta",
 }
 const q10 = {
     numQuestao   : 10,
-    imagem       : '../../img/quiz/10.png',  // Imagem com os números de 1 a 10
-    pergunta     : "Esses sinais representam...",
-    alternativaA : "Cores",
-    alternativaB : "Alfabeto",
-    alternativaC : "Números",
-    alternativaD : "Animais",
-    correta      : "Números",
+    //imagem       : '../../img/quiz/10.png',  // Imagem com os números de 1 a 10
+    video: '../img/quiz/modulo02licao10 .mp4', // Coloque o URL do vídeo
+    pergunta     : "Assista ao vídeo e assinale a alternativa em que o nome Vânia é soletrado.",
+    alternativaA : "Alternativa A: Vanessa",
+    alternativaB : "Alternativa B: Vânia",
+    alternativaC : "Alternativa C: Vander",
+    alternativaD : "Alternativa D: Verônica",
+    correta      : "Alternativa B: Vânia",
 }
 
 // CONSTANTE COM UM ARRAY DE OBJETOS COM TODAS AS QUESTOES
 const questoes = [q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
 
-let numero = document.querySelector('#numero');
-let total  = document.querySelector('#total');
+let numero = document.querySelector('#numero')
+let total  = document.querySelector('#total')
 
-numero.textContent = q1.numQuestao;
+numero.textContent = q1.numQuestao
 
-let totalDeQuestoes = (questoes.length)-1;
-console.log("Total de questões " + totalDeQuestoes);
-total.textContent = totalDeQuestoes;
+let totalDeQuestoes = (questoes.length)-1
+console.log("Total de questões " + totalDeQuestoes)
+total.textContent = totalDeQuestoes
 
 // MONTAR A 1a QUESTAO COMPLETA, para iniciar o Quiz
-numQuestao.textContent = q1.numQuestao;
-imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem); // ADICIONE
-divVideo.innerHTML = questoes[nQuestao].videoEmbed;
-pergunta.textContent   = q1.pergunta;
-a.textContent = q1.alternativaA;
-b.textContent = q1.alternativaB;
-c.textContent = q1.alternativaC;
-d.textContent = q1.alternativaD;
+numQuestao.textContent = q1.numQuestao
+//imgQuestao.setAttribute('src', 'images/'+q1.imagem)  // ADICIONE
+videoQuestao.setAttribute('src', q1.video); // ADICIONE
+pergunta.textContent   = q1.pergunta
+a.textContent = q1.alternativaA
+b.textContent = q1.alternativaB
+c.textContent = q1.alternativaC
+d.textContent = q1.alternativaD
 
 // CONFIGURAR O VALUE INICIAL DA 1a QUESTAO COMPLETA
 a.setAttribute('value', '1A')
@@ -170,8 +176,8 @@ d.setAttribute('value', '1D')
 function proximaQuestao(nQuestao) {
     numero.textContent = nQuestao
     numQuestao.textContent = questoes[nQuestao].numQuestao
-    imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem); // ADICIONE
-    divVideo.innerHTML = questoes[nQuestao].videoEmbed;
+    //imgQuestao.setAttribute('src', 'images/'+questoes[nQuestao].imagem) // ADICIONE
+    videoQuestao.setAttribute('src', questoes[nQuestao].video); // ADICIONE
     pergunta.textContent   = questoes[nQuestao].pergunta
     a.textContent = questoes[nQuestao].alternativaA
     b.textContent = questoes[nQuestao].alternativaB
@@ -221,23 +227,21 @@ function verificarSeAcertou(nQuestao, resposta) {
     console.log("Questão " + numeroDaQuestao)
 
     let respostaEscolhida = resposta.textContent
-    console.log("RespU " + respostaEscolhida)
+    //console.log("RespU " + respostaEscolhida)
 
     let certa = questoes[numeroDaQuestao].correta
-    console.log("RespC " + certa)
+    //console.log("RespC " + certa)
 
     if(respostaEscolhida == certa) {
         //console.log("Acertou")
         //respostaEsta.textContent = "Correta 😊"
         piscarNoAcerto()
-        //somAcerto.play()
         pontos += 10 // pontos = pontos + 10
         if(nQuestao.value == 1 && pontos == 20) { pontos = 10 }
     } else {
         //console.log("Errou!")
         //respostaEsta.textContent = "Errada 😢"
         piscarNoErro()
-        //somErro.play()
     }
     setTimeout(() => {
         tirarPiscar()
@@ -264,43 +268,25 @@ function verificarSeAcertou(nQuestao, resposta) {
     desbloquearAlternativas()
 }
 
- function fimDeJogo(){
-    if (pontos >= 70){
-        window.location.href = '../ṕhp/dashboard.php';
-    } else {
-        window.location.reload(false);
-    }
-}  
-
 function fimDoJogo() {
 
-    if (pontos >= 70){
-        let s = 's'
-        pontos == 0 ? s = '' : s = s
-        instrucoes.textContent = "Parabens! Você conseguiu " + pontos + " ponto"+ s
-        instrucoes.classList.add('placar')
-        //document.querySelector('.fim').style.display = "block";
-        document.getElementById("fimBotao").innerHTML = "Continuar";
+    let s = 's'
+    pontos == 0 ? s = '' : s = s
+    instrucoes.textContent = "Fim de Jogo! Você conseguiu " + pontos + " ponto"+ s
 
-
+    instrucoes.classList.add('placar')
 
     // OCULTAR O ARTICLE DA QUESTAO
-        articleQuestoes.style.display = 'none'
-    } else {
-        let s = 's'
-        pontos == 0 ? s = '' : s = s
-        instrucoes.textContent = "Que pena! Você conseguiu apenas " + pontos + " ponto"+ s + ", tente novamente."
-        instrucoes.classList.add('placar')
-        //document.querySelector('.fim').style.display = "block";
-        //document.getElementById("fimBotao").innerHTML = "Repetir";
-        
-    // OCULTAR O ARTICLE DA QUESTAO
-        articleQuestoes.style.display = 'none'
-    }
+    articleQuestoes.style.display = 'none'
 
-    somAplausos.play()
+    setTimeout(function() {
+        pontos = 0 // zerar placar
+        //location.reload();
+        instrucoes.classList.remove('placar')
+        // REINICIAR O JOGO
+        /*
+        articleQuestoes.style.display = 'block'
+        proximaQuestao(1)
+        instrucoes.textContent = 'Leia a questão e clique na resposta correta'*/
+    }, 8000)
 }
-
-/* function retornar(){
-    window.location.href = '../html/unidade1.html';
-}  */
