@@ -20,6 +20,21 @@
 </head>
 <body>
     <header th:insert="~{fragments/headerUsuario}"></header>
+    <div>
+        <ul class="breadcrumb-navigation">
+          <li>
+            <a th:href="@{/homeUsuario}">
+                Página inicial
+            </a>
+        </li>
+            <li>
+                <a th:href="@{/capitulos}">
+                    Todos os capítulos
+                </a>
+            </li>
+            <li>Capítulo 3</li>
+        </ul>
+    </div>
     <br>
           <br>
           <center><h3>

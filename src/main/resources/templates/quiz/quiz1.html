@@ -10,6 +10,23 @@
 </head>
 <body>
     <header th:insert="~{fragments/headerUsuario}"></header>
+
+    <div>
+        <ul class="breadcrumb-navigation">
+            <li>
+                <a th:href="@{/capitulos}">
+                    Todos os capitulos
+                </a>
+            </li>
+            <li>
+                <a th:href="@{/cap1}">
+                    Capítulo 1
+                </a>
+            </li>
+            <li>Quiz - Capítulo 1</li>
+        </ul>
+    </div>
+
     <main class="tela-principal">
 
         <section class='conteudos'>
@@ -58,10 +75,14 @@
             <br>
             <br>
             <br>
+            <div class="divQuiz">
+                <a id="btnQuiz" th:href="@{/capitulos}">Finalizar quiz</a>
+              </div>
+              <br>
+              <br>
+              <br>
             <footer th:insert="~{fragments/footer}"></footer>
-
         </section>
-
     </main>
 
 <!-- JS externo -->
