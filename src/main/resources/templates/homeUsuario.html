@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" style="overflow-x:hidden;">
-<!--Testando commit-->
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,28 +11,34 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-  <script src="http://kit.fontawsome.com/a076d05399.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- <script src="../static/validarCadastro.js"></script>
     <script src="../js/contraste.js"></script> -->
+
+    <!-- Icones -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+     
 </head>
 
 <body>
-  <header th:insert="~{fragments/header}"></header>
+  <header th:insert="~{fragments/headerUsuario}"></header>
 
   <!-- conteudo da home -->
-  <div id="content">
+<div id="content">
   <article id="home-content">
     <section class="vh100">
       <h1>Fale com a minha mão</h1>
       <p>Este é um curso voltado para quem possui interesse em aprender a Língua Brasileira de Sinais.</p>
+      <div id="idSeta">
+        <center><i class='bx bxs-down-arrow-circle'></i></center>
+        </div>
     </section>
-
+    
     <section class="vh100">
       <blockquote cite="Paulo Freire">
-        <h3>“Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda.”</h3>
+        <h4>“Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda.”</h4>
         <p>Paulo Freire</p>
       </blockquote>
     </section>
@@ -56,13 +62,13 @@
 
     <section class="vh100">
       <h2>Achou interessante? Saiba mais</h2>
-      <a href="cadastroUsuario.html"><button class="btn">
+      <a th:href="@{/criar-usuario}"><button class="btn">
           Cadastre-se
         </button>
       </a>
     </section>
   </article>
-  </div>
+</div>
 </body>
 <footer th:insert="~{fragments/footer}"></footer>
 </html>

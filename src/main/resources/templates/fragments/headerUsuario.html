@@ -9,70 +9,90 @@
     </meta>
     <title>Header</title>
     <script th:src="@{/js/contraste.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}" />
     <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" />
+
+          <!--=============== REMIXICONS ===============-->
+          <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
-<body id="menunav">
-    <header>
-        <div class="acessibilidade">
-          <div>
-            <label class="label-1"><a href="#content" accesskey="1" title="Ir para contéudo da página">Ir para o conteúdo [1]</a></label>
-            <label class="label-1"><a href="#menunav" accesskey="2" title="Ir para o menu de navegação">Ir para menu [2]</a></label>
-            <label class="label-1"><a href="#footer" accesskey="3" title="Ir para o rodapé">Ir para o rodapé [3]</a></label>
-            <label class="label-1"><a th:href="@{/acessibilidade}">ACESSIBILIDADE</a></label>
-            <label class="label-1">Contraste:</label>
-    
-            <!-- Site Normal -->
-            <button id="semcontraste" class="semcontraste" href="javascript:void(0);" title="Site Normal">-</button>
-    
-            <!-- Site Auto Contraste -->
-            <button id="contraste" class="contraste" href="javascript:void(0);" title="Alto contraste">-</button>
-    
-            <button name="increase-font" id="increase-font" title="Aumentar fonte">A +</button>
-            <button name="decrease-font" id="decrease-font" title="Diminuir fonte">A -</button>
-    
-          </div>
+   <body>
+    <!--=============== ACESSIBILIDADE ===============-->
+    <div class="acessibilidade">
+        <div>
+          <label class="label-1"><a href="#content" accesskey="1" title="Ir para contéudo da página">Ir para o conteúdo [1]</a></label>
+          <label class="label-1"><a href="#menunav" accesskey="2" title="Ir para o menu de navegação">Ir para menu [2]</a></label>
+          <label class="label-1"><a href="#footer" accesskey="3" title="Ir para o rodapé">Ir para o rodapé [3]</a></label>
+          <label class="label-1"><a th:href="@{/acessibilidade}">ACESSIBILIDADE</a></label>
+          <label class="label-1">Contraste:</label>
+  
+          <!-- Site Normal -->
+          <button id="semcontraste" class="semcontraste" href="javascript:void(0);" title="Site Normal">-</button>
+  
+          <!-- Site Auto Contraste -->
+          <button id="contraste" class="contraste" href="javascript:void(0);" title="Alto contraste">-</button>
+  
+          <button name="increase-font" id="increase-font" title="Aumentar fonte">A +</button>
+          <button name="decrease-font" id="decrease-font" title="Diminuir fonte">A -</button>
+  
         </div>
-    
-        <!-- navbar -->
-        <nav>
-          <a id="logo" th:href="@{/}">Fale com Minha Mão</a>
-        <nav id="nav-header">
-          <a id="logo" th:href="@{/}">
-            <img src="https://lh3.googleusercontent.com/SDel9ffxRhjWETirs-A96DzjgUltvvqxGAOtdQRe_S22D3TPl6diVAD1sAiWtODfyiVmP4Oeed8okQjcExyBquFxIiMn6yU3Jh0AnDjic5n26QQnRah79irRP8caLrHUZlEPNsEzmfDmr8v8jksyusm-QErPXCSwnIiSvAC3SV2iAPhL38YHAwwmuXyUmwkb9OQEWVD9NuBElUjfNyAIksb0kpJEClCqHyRJxYgPdW5a6hQ3LE0BUe5n1fDG0mwTMvpIcpV3mGmmiefV-quac1ZL2p31NFVJHDMVKPSa_CNS6ve7GcZNGZSahzpxS-tJueRSiwe_5drZiy-adXpiF2ec8iej4emO4gwbNXhi9izQvfdx7Kocq6vf6TEMKyf_DkuKgFSVvlBVCZ1yC5RGF0holU77CQC7aVCndLhvtMDhmM-Sppa7sU-iGhd-YD33ptxMe4WCOwZ1H5XDNtViWdyMlVEYVE_zOhHHf1lLxRelM5kG_Q0uyRjUHOV32jYqRgttsUqNgCHAOqDjRZww5A-t2ph7W5vm6l3AKZuDxO9GKsBswhJjxHEDxRMRsj1NlU8nXEJqJvJwTpJtlnfhNGgmieahEey9Q2nGirexgY_5--xsTGOMAjZX8exmvGSqFqckBLlxegO2hxzlNpNFPD2bv3PbtIgZun5YTB3DznRwjymMB0UnX-6WGPy7iER_PC4VynhS7-9mgx58O89dpkJEGMSsR_Zkj6hmSEe2k0gAftGCqS3T5gY5iGU19gMPkA6v9a1wMnj3ktQ0INjQCCxMiJZYUV2kTyacil8eHpD_X-u2BF-J90dKsGvbjyYBlUKxcWLS2dKJF5GX2WraJdD2GL8Z0hwB7DriWsiv7NgybBF7hE85d5TuFY9fJTxmbaAc-IV7QsDeOL98hTrLub0Gp0_GqDHnoQBc0w_i9FVrpyw=w467-h215-s-no?authuser=0" alt="logo Fale com a minha mão">
-          </a>
-    
-          <ul class="nav-list">
-            <li><a th:href="@{/fale-conosco}">Fale conosco</a></li>
-            <li><a th:href="@{/sobre-nos}">Sobre nós</a></li>
-            <li><a th:href="@{/home}">Olá, Usuário!</a></li>
-            <ul>
-                <li><a th:href="@{/capitulos}">Capítulos</a></li>
-                <li><a th:href="@{/informacoes}">Informações</a></li>
-            </ul>
-            <li><a th:href="@{/}">Sair</a></li>
-          </ul>
-        </nav>
-        <!-- responsividade da navbar -->
-        <script th:src="@{/js/mobile-navbar.js}"></script>
-        <script th:src="@{/js/font-size.js}"></script>
+      </div>
 
-        <!-- Adicionando o VLibras -->
-        <div vw class="enabled">
-            <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+      <!--=============== HEADER ===============-->
+      <header class="header">
+         <nav class="nav container">
+            <div class="nav__data">
+               <a href="#" class="nav__logo" id="logo">
+                <img src="https://lh3.googleusercontent.com/SDel9ffxRhjWETirs-A96DzjgUltvvqxGAOtdQRe_S22D3TPl6diVAD1sAiWtODfyiVmP4Oeed8okQjcExyBquFxIiMn6yU3Jh0AnDjic5n26QQnRah79irRP8caLrHUZlEPNsEzmfDmr8v8jksyusm-QErPXCSwnIiSvAC3SV2iAPhL38YHAwwmuXyUmwkb9OQEWVD9NuBElUjfNyAIksb0kpJEClCqHyRJxYgPdW5a6hQ3LE0BUe5n1fDG0mwTMvpIcpV3mGmmiefV-quac1ZL2p31NFVJHDMVKPSa_CNS6ve7GcZNGZSahzpxS-tJueRSiwe_5drZiy-adXpiF2ec8iej4emO4gwbNXhi9izQvfdx7Kocq6vf6TEMKyf_DkuKgFSVvlBVCZ1yC5RGF0holU77CQC7aVCndLhvtMDhmM-Sppa7sU-iGhd-YD33ptxMe4WCOwZ1H5XDNtViWdyMlVEYVE_zOhHHf1lLxRelM5kG_Q0uyRjUHOV32jYqRgttsUqNgCHAOqDjRZww5A-t2ph7W5vm6l3AKZuDxO9GKsBswhJjxHEDxRMRsj1NlU8nXEJqJvJwTpJtlnfhNGgmieahEey9Q2nGirexgY_5--xsTGOMAjZX8exmvGSqFqckBLlxegO2hxzlNpNFPD2bv3PbtIgZun5YTB3DznRwjymMB0UnX-6WGPy7iER_PC4VynhS7-9mgx58O89dpkJEGMSsR_Zkj6hmSEe2k0gAftGCqS3T5gY5iGU19gMPkA6v9a1wMnj3ktQ0INjQCCxMiJZYUV2kTyacil8eHpD_X-u2BF-J90dKsGvbjyYBlUKxcWLS2dKJF5GX2WraJdD2GL8Z0hwB7DriWsiv7NgybBF7hE85d5TuFY9fJTxmbaAc-IV7QsDeOL98hTrLub0Gp0_GqDHnoQBc0w_i9FVrpyw=w467-h215-s-no?authuser=0" alt="logo Fale com a minha mão">
+               </a>
+               
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line nav__burger"></i>
+                  <i class="ri-close-line nav__close"></i>
+               </div>
             </div>
-        </div>
-        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-        <script>
-            new window.VLibras.Widget('https://vlibras.gov.br/app');
-        </script>
+
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                  <li><a th:href="@{/fale-conosco}" class="nav__link">Fale Conosco</a></li>
+
+                  <li><a th:href="@{/sobre-nos}" class="nav__link">Sobre nós</a></li>
+                  
+
+                  <!--=============== DROPDOWN 1 ===============-->
+                  <li class="dropdown__item">
+                     <div class="nav__link"><a th:href="@{/home}"></a>
+                        Olá, Usuário!<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                     </div>
+
+                     <ul class="dropdown__menu">
+                        <li>
+                           <a th:href="@{/capitulos}" class="dropdown__link">
+                            Capítulos
+                           </a>                          
+                        </li>
+
+                        <li>
+                           <a th:href="@{/informacoes}" class="dropdown__link">
+                            Minhas Informações
+                           </a>
+                        </li>
+
+                        <li>
+                            <a th:href="@{/}" class="dropdown__link">
+                             Sair
+                            </a>
+                         </li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </nav>
       </header>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</body>
 
+      <!--=============== MAIN JS ===============-->
+      <script th:src="@{/js/header.js}"></script>
+        <script th:src="@{/js/font-size.js}"></script>
+   </body>
 </html>
