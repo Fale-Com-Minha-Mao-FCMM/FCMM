@@ -8,12 +8,12 @@ if(getCookie2() == "contraste"){
 
 $(document).ready(function(){
     
-    $("#contraste").click(function(){
+    $(".contraste").click(function(){
         setCookie("contraste");//contraste é o nome do cookie criado e consequentemente o parâmetro value da function setCookie. Ao clicar no link com id contraste, será setado o valor contraste para o cookie criado e ele irá executar a função getCookie2.
         location.reload();			
     });
     
-    $("#semcontraste").click(function(){
+    $(".semcontraste").click(function(){
         setCookie("default")
         location.reload();									
     });

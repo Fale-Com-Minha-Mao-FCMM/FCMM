@@ -168,9 +168,13 @@ body {
 /*=== FIM DA BARRA DE ACESSIBILIDADE ====*/
 
 /*=== INÍCIO MENU ====*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
 /*logo header fcmm*/
 #logo img { 
-  width: 210px;
+  width: 235px;
 }
 #logo {
   z-index: 0;
@@ -179,12 +183,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
-<<<<<<< HEAD
-  position: absolute; /* Adicionado */
-  left: 20px
-=======
-  left: 7%;
->>>>>>> a5b405fdc4af2b68d2633433e1dcef5b28635d03
 }
 #logo a:hover {
   color: #fff;
@@ -288,7 +286,6 @@ body {
 }
 .nav__link {
   color: var(--white-color);
-  background-color:#003087;
   font-weight: 600;
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -440,7 +437,7 @@ body {
    .dropdown__link {
     padding-inline: 1rem;
   }
-
+}
 
   /* Show dropdown menu */
   .dropdown__item:hover .dropdown__menu {
@@ -476,9 +473,6 @@ article {
 #home-content h3 {
   font-size: 3vw;
   color: black;
-}
-#home-content h3{
-  color:black
 }
 #home-content p {
   text-align: center;
@@ -532,6 +526,7 @@ article {
   border: none;
   font-size: 16px;
   margin-top: 55px;
+  font-weight: 600;
 }
 #idSeta{
   font-size: 45px;
@@ -709,18 +704,6 @@ textarea{
   color:#003087 
 }
 
-/* Carrossel */
-.owl-carousel {
-  display: flex;
-  justify-content: space-between; /* ou outra opção de alinhamento desejada */
-}
-.owl-carousel .capitulos-details {
-  flex: 0 0 auto; /* ou outra opção de dimensionamento desejada */
-  margin-right: 10px; /* ou outra margem desejada entre os itens */
-  max-width: 80%;
-  /* Restante das propriedades específicas para cada item do carrossel */
-}
-
 /*cards desenvolvedores*/
 .cards_sobre {
   display: flex;
@@ -848,7 +831,7 @@ footer {
 .socials a:hover i {
   color: aqua;
 }
-/*=== FOOTER ===*/
+/*=== FIM FOOTER ===*/
 
 /*=== INÍCIO CADASTRO ====*/
 #containerInteiro{ /*vale tanto pro form de login quanto o de cadastro*/
@@ -872,10 +855,9 @@ footer {
   border-radius: 32px;
   flex-direction: column;
   justify-content: center;
-  background-color: var
 }
 .Cadastro-Container h1{
-  color: var(--dl-color-default-black);
+  color: black;
   height: auto;
   align-self: auto;
   text-align: center;
@@ -884,7 +866,7 @@ footer {
   margin-bottom: 48px;
 }
 .Cadastro-Container h2{
-  color: var(--dl-color-default-black);
+  color: black;
   height: auto;
   align-self: auto;
   text-align: left;
@@ -1086,7 +1068,7 @@ cursor: pointer;
   justify-content: center;
 }
 .Login-Container h1{
-  color: var(--dl-color-default-black);
+  color: black;
   height: auto;
   align-self: auto;
   text-align: center;
@@ -1257,7 +1239,6 @@ button {
   justify-content: space-between;
   margin: auto 12px;
   top: 50%;
-
 }
 .crudContainer .headerCrud span {
   font-weight: 900;
@@ -1271,8 +1252,6 @@ button {
   color: white;
   background-color: #003087;
   text-decoration: none;
-  /* margin-left: 65rem; */
-  /*margin-top: 10rem;*/
 }
 .divTable {
   padding: 10px;
@@ -1323,9 +1302,6 @@ tbody tr td.acao {
 /*=== FIM CRUD ALUNO ===*/
 
 /*=== INÍCIO CRUD ADMIN ===*/
-button {
-  cursor: pointer;
-}
 .crudContainer2 {
   width: 90%;
   height: 80%;
@@ -1344,7 +1320,6 @@ button {
   justify-content: space-between;
   margin: auto 12px;
   top: 50%;
-
 }
 .crudContainer2 .headerCrud2 span {
   font-weight: 900;
@@ -1445,7 +1420,7 @@ td button i:first-child {
   position: fixed;
   height: 100%;
   width: 240px;
-  background: #0A2558;
+  background: #003087;
   transition: all 0.5s ease;
 }
 .sidebar.active{
@@ -1562,7 +1537,7 @@ nav .sidebar-button i{
 }
 .capitulos-details{
   border-radius: 20px;
-  background-color: var(--branco);
+  background-color: white;
   padding-bottom: 1.5rem;
   width: 18rem;
   box-shadow: 0px 0px 32px 0px rgb(0 0 0 / 25%);
@@ -1636,39 +1611,6 @@ nav .sidebar-button i{
   }
 }
 /*=== FIM CAPÍTULOS ===*/
-
-/*=== INÍCIO NAVBAR USUÁRIO ===*/
-.nav-list-user {
-  list-style: none;
-  display: flex;
-}
-.nav-list-user a{
-  list-style: none;
-  text-decoration: none;
-  color: #FFF;
-}
-.nav-list-user li ul a{
-  list-style: none;
-}
-.nav-list-user li {
-  letter-spacing: 3px;
-  margin-left: 32px;
-  list-style: none;
-}
-.nav-list-user:hover>ul.nav-list2-user {
-  display: block;
-  top: 45px;
-  left: 0;
-  padding: 5px;
-  width: 200px;
-  list-style: none;
-}
-.nav-list-user ul.nav-list2-user a {
-  width: 100px;
-  padding: 0 20px;
-  list-style: none;
-}
-/*=== FIM NAVBAR USUARIO ===*/
 
 /*=== ÍNICIO FORM EDITAR INFORMAÇÕES ===*/
 .Cadastro-Container .textNumeroCelular2{
@@ -2039,20 +1981,6 @@ iframe {
   text-decoration: none;
 }
 /*=== FIM CAPÍTULOS INSIDE ===*/
-
-/*=== INÍCIO HEADER ===*/
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-.container {
-  max-width: 1120px;
-  margin-inline: 1.5rem;
-}
-
-/*=============== HEADER ===============*/
-/*=============== HEADER ===============*/
-
-/*=== FIM HEADER ===*/
-
 /*=== INÍCIO BREADCRUMBS ===*/
 .breadcrumb-navigation {
   padding: 10px 18px;
@@ -2079,3 +2007,15 @@ iframe {
   content: "/";
 }
 /*=== FIM BREADCRUMBS ===*/
+
+/* Carrossel */
+.owl-carousel {
+  display: flex;
+  justify-content: space-between; /* ou outra opção de alinhamento desejada */
+}
+.owl-carousel .capitulos-details {
+  flex: 0 0 auto; /* ou outra opção de dimensionamento desejada */
+  margin-right: 10px; /* ou outra margem desejada entre os itens */
+  max-width: 80%;
+  /* Restante das propriedades específicas para cada item do carrossel */
+}
